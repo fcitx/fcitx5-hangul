@@ -1,20 +1,18 @@
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
-# This file is distributed under the same license as the PACKAGE package.
+# This file is distributed under the same license as the fcitx5-hangul package.
 #
 # Translators:
+# csslayer <wengxt@gmail.com>, 2017
 # Bon Keun Seo <scobyseo@gmail.com>, 2017
-# csslayer <wengxt@gmail.com>, 2013
-# csslayer <wengxt@gmail.com>, 2012
-# csslayer <wengxt@gmail.com>, 2012
 msgid ""
 msgstr ""
 "Project-Id-Version: fcitx5-hangul\n"
 "Report-Msgid-Bugs-To: fcitx-dev@googlegroups.com\n"
-"POT-Creation-Date: 2017-12-28 21:08-0800\n"
-"PO-Revision-Date: 2017-07-08 11:51+0000\n"
-"Last-Translator: Bon Keun Seo <scobyseo@gmail.com>\n"
-"Language-Team: Korean (http://www.transifex.com/fcitx/fcitx/language/ko/)\n"
+"POT-Creation-Date: 2017-12-29 00:01-0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: Bon Keun Seo <scobyseo@gmail.com>, 2017\n"
+"Language-Team: Korean (https://www.transifex.com/fcitx/teams/12005/ko/)\n"
 "Language: ko\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -37,7 +35,7 @@ msgstr "두벌식"
 msgid "Dubeolsik Yetgeul"
 msgstr "두벌식 옛글"
 
-#: src/hangul-addon.conf.in:3 src/hangul.conf.in:3
+#: src/hangul.conf.in:3 src/hangul-addon.conf.in:3
 msgid "Hangul"
 msgstr "한글"
 
@@ -59,19 +57,19 @@ msgstr "자판 배열"
 
 #: src/engine.h:84
 msgid "Next Candidate"
-msgstr ""
+msgstr "다음 후보"
 
 #: src/engine.h:72
 msgid "Next Page"
-msgstr ""
+msgstr "다음 페이지"
 
 #: src/engine.h:78
 msgid "Prev Candidate"
-msgstr ""
+msgstr "이전 후보"
 
 #: src/engine.h:66
 msgid "Prev Page"
-msgstr ""
+msgstr "이전 페이지"
 
 #: src/engine.h:50
 msgid "Romaja"
@@ -83,7 +81,7 @@ msgstr "세벌식 390"
 
 #: src/engine.h:50
 msgid "Sebeolsik Dubeol Layout"
-msgstr "세벌식 두벌자판"
+msgstr "세벌식 두벌배열"
 
 #: src/engine.h:48
 msgid "Sebeolsik Final"
