@@ -9,9 +9,9 @@
 # csslayer <wengxt@gmail.com>, 2012
 msgid ""
 msgstr ""
-"Project-Id-Version: fcitx\n"
+"Project-Id-Version: fcitx5-hangul\n"
 "Report-Msgid-Bugs-To: fcitx-dev@googlegroups.com\n"
-"POT-Creation-Date: 2017-07-08 05:02-0700\n"
+"POT-Creation-Date: 2017-12-28 21:08-0800\n"
 "PO-Revision-Date: 2017-07-08 11:51+0000\n"
 "Last-Translator: Bon Keun Seo <scobyseo@gmail.com>\n"
 "Language-Team: Korean (http://www.transifex.com/fcitx/fcitx/language/ko/)\n"
@@ -21,76 +21,90 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 
-#: src/fcitx-hangul.desc:14
+#: src/engine.h:51
 msgid "Ahnmatae"
 msgstr "안마태"
 
-#: src/fcitx-hangul.desc:25
+#: src/engine.h:87
 msgid "Auto Reorder"
 msgstr "자동 재배열"
 
-#: src/fcitx-hangul.desc:6
+#: src/engine.h:46
 msgid "Dubeolsik"
 msgstr "두벌식"
 
-#: src/fcitx-hangul.desc:7
+#: src/engine.h:47
 msgid "Dubeolsik Yetgeul"
 msgstr "두벌식 옛글"
 
-#: src/eim.c:764 src/fcitx-hangul.conf.in:3 src/hangul.conf.in:3
-#: src/fcitx-hangul.desc:1 src/fcitx-hangul.desc:17 src/fcitx-hangul.desc:22
-#: src/fcitx-hangul.desc:27 src/fcitx-hangul.desc:32
+#: src/hangul-addon.conf.in:3 src/hangul.conf.in:3
 msgid "Hangul"
 msgstr "한글"
 
-#: src/fcitx-hangul.conf.in:4
+#: src/hangul-addon.conf.in:4
 msgid "Hangul Wrapper For Fcitx"
 msgstr "Fcitx의 한글 표지"
 
-#: src/fcitx-hangul.desc:35
+#: src/engine.h:89
 msgid "Hanja Mode"
 msgstr "한자 모드"
 
-#: src/fcitx-hangul.desc:20
+#: src/engine.h:60
 msgid "Hanja Mode Toggle Key"
 msgstr "한자 모드 변환 키"
 
-#: src/fcitx-hangul.desc:4
+#: src/engine.h:56
 msgid "Keyboard Layout"
 msgstr "자판 배열"
 
-#: src/fcitx-hangul.desc:13
+#: src/engine.h:84
+msgid "Next Candidate"
+msgstr ""
+
+#: src/engine.h:72
+msgid "Next Page"
+msgstr ""
+
+#: src/engine.h:78
+msgid "Prev Candidate"
+msgstr ""
+
+#: src/engine.h:66
+msgid "Prev Page"
+msgstr ""
+
+#: src/engine.h:50
 msgid "Romaja"
 msgstr "로마자"
 
-#: src/fcitx-hangul.desc:8
+#: src/engine.h:47
 msgid "Sebeolsik 390"
 msgstr "세벌식 390"
 
-#: src/fcitx-hangul.desc:12
+#: src/engine.h:50
 msgid "Sebeolsik Dubeol Layout"
 msgstr "세벌식 두벌자판"
 
-#: src/fcitx-hangul.desc:9
+#: src/engine.h:48
 msgid "Sebeolsik Final"
 msgstr "세벌식 최종"
 
-#: src/fcitx-hangul.desc:10
+#: src/engine.h:48
 msgid "Sebeolsik Noshift"
 msgstr "세벌식 순아래"
 
-#: src/fcitx-hangul.desc:11
+#: src/engine.h:49
 msgid "Sebeolsik Yetgeul"
 msgstr "세벌식 옛글"
 
-#: src/eim.c:818
+#: src/engine.h:133
 msgid "Use Hangul"
 msgstr "한글 사용"
 
-#: src/eim.c:815
+#: src/engine.h:132
 msgid "Use Hanja"
 msgstr "한자 사용"
 
-#: src/fcitx-hangul.desc:30
+#: src/engine.h:88
 msgid "Word Commit"
 msgstr "단어 단위 입력"

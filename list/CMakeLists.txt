@@ -1,5 +1,2 @@
-
-include_directories (${HANGUL_INCLUDE_DIR})
-
 add_executable(gen_list gen_list.c)
-target_link_libraries (gen_list ${HANGUL_LIBRARIES})
+target_link_libraries (gen_list PkgConfig::Hangul)

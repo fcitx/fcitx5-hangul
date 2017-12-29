@@ -1,9 +1,0 @@
-[Addon]
-Name=fcitx-hangul
-_GeneralName=Hangul
-_Comment=Hangul Wrapper For Fcitx
-Category=InputMethod
-Enabled=True
-Library=fcitx-hangul.so
-Type=SharedLibrary
-IMRegisterMethod=ConfigFile

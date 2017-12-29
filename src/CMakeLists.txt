@@ -1,21 +1,12 @@
-
-include_directories (${HANGUL_INCLUDE_DIR}
-                     ${FCITX4_FCITX_CONFIG_INCLUDE_DIRS}
-                     ${FCITX4_FCITX_INCLUDE_DIRS}
-                     ${PROJECT_BINARY_DIR})
-
 set( fcitx_hangul_sources
-    ustring.c
-    eim.c
-    config.c
-    keyboard.c
+    engine.cpp
     )
 
-add_definitions( -DLOCALEDIR=\"${CMAKE_INSTALL_PREFIX}/share/locale\" )
-
-fcitx_add_addon_full(hangul
-   DESC
-   IM_CONFIG hangul.conf
-   SOURCES ${fcitx_hangul_sources}
-   LINK_LIBS ${HANGUL_LIBRARIES}
-   )
+add_library(hangul MODULE ${fcitx_hangul_sources})
+target_link_libraries(hangul Fcitx5::Core Fcitx5::Config PkgConfig::Hangul)
+set_target_properties(hangul PROPERTIES PREFIX "")
+install(TARGETS hangul DESTINATION "${CMAKE_INSTALL_LIBDIR}/fcitx5")
+fcitx5_translate_desktop_file(hangul.conf.in hangul.conf)
+fcitx5_translate_desktop_file(hangul-addon.conf.in hangul-addon.conf)
+install(FILES "${CMAKE_CURRENT_BINARY_DIR}/hangul.conf" DESTINATION "${FCITX_INSTALL_PKGDATADIR}/inputmethod")
+install(FILES "${CMAKE_CURRENT_BINARY_DIR}/hangul-addon.conf" RENAME hangul.conf DESTINATION "${FCITX_INSTALL_PKGDATADIR}/addon")

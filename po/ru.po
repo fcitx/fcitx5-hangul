@@ -1,93 +1,109 @@
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
 # This file is distributed under the same license as the PACKAGE package.
-# 
+#
 # Translators:
 # TotalCaesar659 <x24cm5b8c54q6szxw@yandex.ru>, 2016
 msgid ""
 msgstr ""
-"Project-Id-Version: fcitx\n"
+"Project-Id-Version: fcitx5-hangul\n"
 "Report-Msgid-Bugs-To: fcitx-dev@googlegroups.com\n"
-"POT-Creation-Date: 2013-06-26 20:12-0400\n"
+"POT-Creation-Date: 2017-12-28 21:08-0800\n"
 "PO-Revision-Date: 2016-11-30 23:35+0000\n"
 "Last-Translator: TotalCaesar659 <x24cm5b8c54q6szxw@yandex.ru>\n"
 "Language-Team: Russian (http://www.transifex.com/fcitx/fcitx/language/ru/)\n"
+"Language: ru\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: ru\n"
-"Plural-Forms: nplurals=4; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<12 || n%100>14) ? 1 : n%10==0 || (n%10>=5 && n%10<=9) || (n%100>=11 && n%100<=14)? 2 : 3);\n"
+"Plural-Forms: nplurals=4; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
+"%10<=4 && (n%100<12 || n%100>14) ? 1 : n%10==0 || (n%10>=5 && n%10<=9) || (n"
+"%100>=11 && n%100<=14)? 2 : 3);\n"
 
-#: src/eim.c:763 src/fcitx-hangul.conf.in:3 src/hangul.conf.in:3
-#: src/fcitx-hangul.desc:1 src/fcitx-hangul.desc:17 src/fcitx-hangul.desc:22
-#: src/fcitx-hangul.desc:27 src/fcitx-hangul.desc:32
-msgid "Hangul"
-msgstr "Hangul"
-
-#: src/eim.c:814
-msgid "Use Hanja"
-msgstr "Использовать Hanja"
-
-#: src/eim.c:817
-msgid "Use Hangul"
-msgstr "Использовать Hangul"
-
-#: src/fcitx-hangul.conf.in:4
-msgid "Hangul Wrapper For Fcitx"
-msgstr "Обертка Hangul для Fcitx"
-
-#: src/fcitx-hangul.desc:4
-msgid "Keyboard Layout"
-msgstr "Раскладка клавиатуры"
-
-#: src/fcitx-hangul.desc:6
-msgid "Dubeolsik"
-msgstr "Dubeolsik"
-
-#: src/fcitx-hangul.desc:7
-msgid "Dubeolsik Yetgeul"
-msgstr "Dubeolsik Yetgeul"
-
-#: src/fcitx-hangul.desc:8
-msgid "Sebeolsik 390"
-msgstr "Sebeolsik 390"
-
-#: src/fcitx-hangul.desc:9
-msgid "Sebeolsik Final"
-msgstr "Sebeolsik Final"
-
-#: src/fcitx-hangul.desc:10
-msgid "Sebeolsik Noshift"
-msgstr "Sebeolsik Noshift"
-
-#: src/fcitx-hangul.desc:11
-msgid "Sebeolsik Yetgeul"
-msgstr "Sebeolsik Yetgeul"
-
-#: src/fcitx-hangul.desc:12
-msgid "Sebeolsik Dubeol Layout"
-msgstr "Раскладка Sebeolsik Dubeol"
-
-#: src/fcitx-hangul.desc:13
-msgid "Romaja"
-msgstr "Romaja"
-
-#: src/fcitx-hangul.desc:14
+#: src/engine.h:51
 msgid "Ahnmatae"
 msgstr "Ahnmatae"
 
-#: src/fcitx-hangul.desc:20
-msgid "Hanja Mode Toggle Key"
-msgstr "Клавиша переключения режима Hanja"
-
-#: src/fcitx-hangul.desc:25
+#: src/engine.h:87
 msgid "Auto Reorder"
 msgstr "Автоматическая пересортировка"
 
-#: src/fcitx-hangul.desc:30
-msgid "Word Commit"
-msgstr "Добавить слово"
+#: src/engine.h:46
+msgid "Dubeolsik"
+msgstr "Dubeolsik"
 
-#: src/fcitx-hangul.desc:35
+#: src/engine.h:47
+msgid "Dubeolsik Yetgeul"
+msgstr "Dubeolsik Yetgeul"
+
+#: src/hangul-addon.conf.in:3 src/hangul.conf.in:3
+msgid "Hangul"
+msgstr "Hangul"
+
+#: src/hangul-addon.conf.in:4
+msgid "Hangul Wrapper For Fcitx"
+msgstr "Обертка Hangul для Fcitx"
+
+#: src/engine.h:89
 msgid "Hanja Mode"
 msgstr "Режим Hanja"
+
+#: src/engine.h:60
+msgid "Hanja Mode Toggle Key"
+msgstr "Клавиша переключения режима Hanja"
+
+#: src/engine.h:56
+msgid "Keyboard Layout"
+msgstr "Раскладка клавиатуры"
+
+#: src/engine.h:84
+msgid "Next Candidate"
+msgstr ""
+
+#: src/engine.h:72
+msgid "Next Page"
+msgstr ""
+
+#: src/engine.h:78
+msgid "Prev Candidate"
+msgstr ""
+
+#: src/engine.h:66
+msgid "Prev Page"
+msgstr ""
+
+#: src/engine.h:50
+msgid "Romaja"
+msgstr "Romaja"
+
+#: src/engine.h:47
+msgid "Sebeolsik 390"
+msgstr "Sebeolsik 390"
+
+#: src/engine.h:50
+msgid "Sebeolsik Dubeol Layout"
+msgstr "Раскладка Sebeolsik Dubeol"
+
+#: src/engine.h:48
+msgid "Sebeolsik Final"
+msgstr "Sebeolsik Final"
+
+#: src/engine.h:48
+msgid "Sebeolsik Noshift"
+msgstr "Sebeolsik Noshift"
+
+#: src/engine.h:49
+msgid "Sebeolsik Yetgeul"
+msgstr "Sebeolsik Yetgeul"
+
+#: src/engine.h:133
+msgid "Use Hangul"
+msgstr "Использовать Hangul"
+
+#: src/engine.h:132
+msgid "Use Hanja"
+msgstr "Использовать Hanja"
+
+#: src/engine.h:88
+msgid "Word Commit"
+msgstr "Добавить слово"

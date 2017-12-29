@@ -1,0 +1,8 @@
+[Addon]
+Name=Hangul
+Comment=Hangul Wrapper For Fcitx
+Category=InputMethod
+Library=hangul
+Type=SharedLibrary
+OnDemand=True
+Configurable=True

@@ -10,9 +10,9 @@
 # csslayer <wengxt@gmail.com>, 2010-2012
 msgid ""
 msgstr ""
-"Project-Id-Version: fcitx\n"
+"Project-Id-Version: fcitx5-hangul\n"
 "Report-Msgid-Bugs-To: fcitx-dev@googlegroups.com\n"
-"POT-Creation-Date: 2017-06-13 12:02-0700\n"
+"POT-Creation-Date: 2017-12-28 21:08-0800\n"
 "PO-Revision-Date: 2013-06-27 00:22+0000\n"
 "Last-Translator: csslayer <wengxt@gmail.com>\n"
 "Language-Team: Chinese (China) (http://www.transifex.com/fcitx/fcitx/"
@@ -23,76 +23,90 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 
-#: src/fcitx-hangul.desc:14
+#: src/engine.h:51
 msgid "Ahnmatae"
 msgstr "安马太键盘"
 
-#: src/fcitx-hangul.desc:25
+#: src/engine.h:87
 msgid "Auto Reorder"
 msgstr "自动排序"
 
-#: src/fcitx-hangul.desc:6
+#: src/engine.h:46
 msgid "Dubeolsik"
 msgstr "Dubeolsik"
 
-#: src/fcitx-hangul.desc:7
+#: src/engine.h:47
 msgid "Dubeolsik Yetgeul"
 msgstr "Dubeolsik Yetgeul"
 
-#: src/eim.c:764 src/fcitx-hangul.conf.in:3 src/hangul.conf.in:3
-#: src/fcitx-hangul.desc:1 src/fcitx-hangul.desc:17 src/fcitx-hangul.desc:22
-#: src/fcitx-hangul.desc:27 src/fcitx-hangul.desc:32
+#: src/hangul-addon.conf.in:3 src/hangul.conf.in:3
 msgid "Hangul"
 msgstr "韩文"
 
-#: src/fcitx-hangul.conf.in:4
+#: src/hangul-addon.conf.in:4
 msgid "Hangul Wrapper For Fcitx"
 msgstr "Fcitx 的韩文封装"
 
-#: src/fcitx-hangul.desc:35
+#: src/engine.h:89
 msgid "Hanja Mode"
 msgstr "汉字模式"
 
-#: src/fcitx-hangul.desc:20
+#: src/engine.h:60
 msgid "Hanja Mode Toggle Key"
 msgstr "汉字模式切换键"
 
-#: src/fcitx-hangul.desc:4
+#: src/engine.h:56
 msgid "Keyboard Layout"
 msgstr "键盘布局"
 
-#: src/fcitx-hangul.desc:13
+#: src/engine.h:84
+msgid "Next Candidate"
+msgstr ""
+
+#: src/engine.h:72
+msgid "Next Page"
+msgstr ""
+
+#: src/engine.h:78
+msgid "Prev Candidate"
+msgstr ""
+
+#: src/engine.h:66
+msgid "Prev Page"
+msgstr ""
+
+#: src/engine.h:50
 msgid "Romaja"
 msgstr "Romaja"
 
-#: src/fcitx-hangul.desc:8
+#: src/engine.h:47
 msgid "Sebeolsik 390"
 msgstr "Sebeolsik 390"
 
-#: src/fcitx-hangul.desc:12
+#: src/engine.h:50
 msgid "Sebeolsik Dubeol Layout"
 msgstr "Sebeolsik Dubeol 布局"
 
-#: src/fcitx-hangul.desc:9
+#: src/engine.h:48
 msgid "Sebeolsik Final"
 msgstr "Sebeolsik Final"
 
-#: src/fcitx-hangul.desc:10
+#: src/engine.h:48
 msgid "Sebeolsik Noshift"
 msgstr "Sebeolsik Noshift"
 
-#: src/fcitx-hangul.desc:11
+#: src/engine.h:49
 msgid "Sebeolsik Yetgeul"
 msgstr "三套式古文"
 
-#: src/eim.c:818
+#: src/engine.h:133
 msgid "Use Hangul"
 msgstr "使用韩文"
 
-#: src/eim.c:815
+#: src/engine.h:132
 msgid "Use Hanja"
 msgstr "使用汉字"
 
-#: src/fcitx-hangul.desc:30
+#: src/engine.h:88
 msgid "Word Commit"
 msgstr "单词提交"
