@@ -1,16 +1,17 @@
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
-# This file is distributed under the same license as the PACKAGE package.
+# This file is distributed under the same license as the fcitx5-hangul package.
 #
 # Translators:
+# scootergrisen <scootergrisen@gmail.com>, 2017
 msgid ""
 msgstr ""
 "Project-Id-Version: fcitx5-hangul\n"
 "Report-Msgid-Bugs-To: fcitx-dev@googlegroups.com\n"
-"POT-Creation-Date: 2017-12-28 21:08-0800\n"
-"PO-Revision-Date: 2012-03-17 06:22+0000\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language-Team: Danish (http://www.transifex.com/fcitx/fcitx/language/da/)\n"
+"POT-Creation-Date: 2017-12-30 00:01-0800\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: scootergrisen <scootergrisen@gmail.com>, 2017\n"
+"Language-Team: Danish (https://www.transifex.com/fcitx/teams/12005/da/)\n"
 "Language: da\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -19,88 +20,88 @@ msgstr ""
 
 #: src/engine.h:51
 msgid "Ahnmatae"
-msgstr ""
+msgstr "Ahnmatae"
 
 #: src/engine.h:87
 msgid "Auto Reorder"
-msgstr ""
+msgstr "Automatisk genplacering"
 
 #: src/engine.h:46
 msgid "Dubeolsik"
-msgstr ""
+msgstr "Dubeolsik"
 
 #: src/engine.h:47
 msgid "Dubeolsik Yetgeul"
-msgstr ""
+msgstr "Dubeolsik Yetgeul"
 
-#: src/hangul-addon.conf.in:3 src/hangul.conf.in:3
+#: src/hangul.conf.in:3 src/hangul-addon.conf.in:3
 msgid "Hangul"
-msgstr ""
+msgstr "Hangul"
 
 #: src/hangul-addon.conf.in:4
 msgid "Hangul Wrapper For Fcitx"
-msgstr ""
+msgstr "Hangul-wrapper til Fcitx"
 
 #: src/engine.h:89
 msgid "Hanja Mode"
-msgstr ""
+msgstr "Hanja-tilstand"
 
 #: src/engine.h:60
 msgid "Hanja Mode Toggle Key"
-msgstr ""
+msgstr "Tast til at skifte Hanja-tilstand"
 
 #: src/engine.h:56
 msgid "Keyboard Layout"
-msgstr ""
+msgstr "Tastaturlayout"
 
 #: src/engine.h:84
 msgid "Next Candidate"
-msgstr ""
+msgstr "Næste kanditat"
 
 #: src/engine.h:72
 msgid "Next Page"
-msgstr ""
+msgstr "Næste side"
 
 #: src/engine.h:78
 msgid "Prev Candidate"
-msgstr ""
+msgstr "Forrige kandidat"
 
 #: src/engine.h:66
 msgid "Prev Page"
-msgstr ""
+msgstr "Forrige side"
 
 #: src/engine.h:50
 msgid "Romaja"
-msgstr ""
+msgstr "Romaja"
 
 #: src/engine.h:47
 msgid "Sebeolsik 390"
-msgstr ""
+msgstr "Sebeolsik 390"
 
 #: src/engine.h:50
 msgid "Sebeolsik Dubeol Layout"
-msgstr ""
+msgstr "Sebeolsik Dubeol-layout"
 
 #: src/engine.h:48
 msgid "Sebeolsik Final"
-msgstr ""
+msgstr "Sebeolsik Final"
 
 #: src/engine.h:48
 msgid "Sebeolsik Noshift"
-msgstr ""
+msgstr "Sebeolsik Noshift"
 
 #: src/engine.h:49
 msgid "Sebeolsik Yetgeul"
-msgstr ""
+msgstr "Sebeolsik Yetgeul"
 
 #: src/engine.h:133
 msgid "Use Hangul"
-msgstr ""
+msgstr "Brug Hangul"
 
 #: src/engine.h:132
 msgid "Use Hanja"
-msgstr ""
+msgstr "Brug Hanja"
 
 #: src/engine.h:88
 msgid "Word Commit"
-msgstr ""
+msgstr "Ordudfør"

@@ -4,13 +4,14 @@
 #
 # Translators:
 # csslayer <wengxt@gmail.com>, 2017
+# Jeff Huang <s8321414@gmail.com>, 2017
 msgid ""
 msgstr ""
 "Project-Id-Version: fcitx5-hangul\n"
 "Report-Msgid-Bugs-To: fcitx-dev@googlegroups.com\n"
-"POT-Creation-Date: 2017-12-29 00:01-0800\n"
+"POT-Creation-Date: 2017-12-30 00:01-0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: csslayer <wengxt@gmail.com>, 2017\n"
+"Last-Translator: Jeff Huang <s8321414@gmail.com>, 2017\n"
 "Language-Team: Chinese (Taiwan) (https://www.transifex.com/fcitx/teams/12005/"
 "zh_TW/)\n"
 "Language: zh_TW\n"
@@ -57,19 +58,19 @@ msgstr "鍵盤配置"
 
 #: src/engine.h:84
 msgid "Next Candidate"
-msgstr ""
+msgstr "下個候選字"
 
 #: src/engine.h:72
 msgid "Next Page"
-msgstr ""
+msgstr "下一頁"
 
 #: src/engine.h:78
 msgid "Prev Candidate"
-msgstr ""
+msgstr "前一個候選字"
 
 #: src/engine.h:66
 msgid "Prev Page"
-msgstr ""
+msgstr "前一頁"
 
 #: src/engine.h:50
 msgid "Romaja"
