@@ -426,16 +426,18 @@ public:
         auto pre1 = ustringToUTF8(preedit_);
         auto pre2 = hic_preedit ? ustringToUTF8(hic_preedit) : "";
 
-        Text text;
-        text.append(pre1);
-        text.append(pre2, TextFormatFlag::HighLight);
-        text.setCursor(pre1.size() + pre2.size());
-        if (ic_->capabilityFlags().test(CapabilityFlag::Preedit)) {
-            ic_->inputPanel().setClientPreedit(text);
-            ic_->updatePreedit();
-        } else {
-            ic_->inputPanel().setPreedit(text);
+        if (!pre1.empty() && !pre2.empty()) {
+            Text text;
+            text.append(pre1);
+            text.append(pre2, TextFormatFlag::HighLight);
+            text.setCursor(pre1.size() + pre2.size());
+            if (ic_->capabilityFlags().test(CapabilityFlag::Preedit)) {
+                ic_->inputPanel().setClientPreedit(text);
+            } else {
+                ic_->inputPanel().setPreedit(text);
+            }
         }
+        ic_->updatePreedit();
 
         setLookupTable();
 
