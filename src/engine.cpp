@@ -426,7 +426,7 @@ public:
         auto pre1 = ustringToUTF8(preedit_);
         auto pre2 = hic_preedit ? ustringToUTF8(hic_preedit) : "";
 
-        if (!pre1.empty() && !pre2.empty()) {
+        if (!pre1.empty() || !pre2.empty()) {
             Text text;
             text.append(pre1);
             text.append(pre2, TextFormatFlag::HighLight);
