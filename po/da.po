@@ -3,14 +3,15 @@
 # This file is distributed under the same license as the fcitx5-hangul package.
 #
 # Translators:
-# scootergrisen <scootergrisen@gmail.com>, 2017
+# scootergrisen, 2019
+#
 msgid ""
 msgstr ""
 "Project-Id-Version: fcitx5-hangul\n"
 "Report-Msgid-Bugs-To: fcitx-dev@googlegroups.com\n"
-"POT-Creation-Date: 2017-12-30 00:01-0800\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: scootergrisen <scootergrisen@gmail.com>, 2017\n"
+"POT-Creation-Date: 2019-11-05 00:01-0800\n"
+"PO-Revision-Date: 2017-12-29 05:05+0000\n"
+"Last-Translator: scootergrisen, 2019\n"
 "Language-Team: Danish (https://www.transifex.com/fcitx/teams/12005/da/)\n"
 "Language: da\n"
 "MIME-Version: 1.0\n"
@@ -56,7 +57,7 @@ msgstr "Tastaturlayout"
 
 #: src/engine.h:84
 msgid "Next Candidate"
-msgstr "Næste kanditat"
+msgstr "Næste kandidat"
 
 #: src/engine.h:72
 msgid "Next Page"
