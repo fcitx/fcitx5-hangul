@@ -154,6 +154,6 @@ public:
         return new HangulEngine(manager->instance());
     }
 };
-}
+} // namespace fcitx
 
 #endif // _FCITX5_HANGUL_ENGINE_H_

@@ -18,10 +18,10 @@
 #include <hangul.h>
 #include <stdio.h>
 
-int main()
-{
+int main() {
     unsigned int nkeyboard = hangul_ic_get_n_keyboards(), i;
-    for (i = 0 ; i < nkeyboard ; i ++)
-        printf("\"%s\" \"%s\"\n", hangul_ic_get_keyboard_name(i), hangul_ic_get_keyboard_id(i));
+    for (i = 0; i < nkeyboard; i++)
+        printf("\"%s\" \"%s\"\n", hangul_ic_get_keyboard_name(i),
+               hangul_ic_get_keyboard_id(i));
     return 0;
 }
