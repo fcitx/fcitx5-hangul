@@ -299,7 +299,7 @@ public:
             auto idx = keyEvent.key().keyListIndex(selectionKeys());
             if (idx >= 0) {
                 if (idx < candList->size()) {
-                    candList->candidate(idx)->select(ic_);
+                    candList->candidate(idx).select(ic_);
                 }
                 return keyEvent.filterAndAccept();
             }
@@ -311,7 +311,7 @@ public:
                 }
 
                 if (idx < candList->size()) {
-                    candList->candidate(idx)->select(ic_);
+                    candList->candidate(idx).select(ic_);
                     return keyEvent.filterAndAccept();
                 }
             }
@@ -459,7 +459,7 @@ public:
             auto n = hanja_list_get_size(list);
             for (auto i = 0; i < n; i++) {
                 const char *value = hanja_list_get_nth_value(list, i);
-                candidate->append(new HangulCandidate(engine_, i, value));
+                candidate->append<HangulCandidate>(engine_, i, value);
             }
             if (n) {
                 candidate->setGlobalCursorIndex(0);
@@ -611,6 +611,6 @@ void HangulCandidate::select(InputContext *inputContext) const {
     auto state = engine_->state(inputContext);
     state->select(idx_);
 }
-}
+} // namespace fcitx
 
 FCITX_ADDON_FACTORY(fcitx::HangulEngineFactory);
