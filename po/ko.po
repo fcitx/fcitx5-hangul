@@ -5,13 +5,15 @@
 # Translators:
 # csslayer <wengxt@gmail.com>, 2017
 # Bon Keun Seo <scobyseo@gmail.com>, 2017
+# MarongHappy <daemul72@gmail.com>, 2020
+#
 msgid ""
 msgstr ""
 "Project-Id-Version: fcitx5-hangul\n"
 "Report-Msgid-Bugs-To: fcitx-dev@googlegroups.com\n"
-"POT-Creation-Date: 2017-12-29 00:01-0800\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: Bon Keun Seo <scobyseo@gmail.com>, 2017\n"
+"POT-Creation-Date: 2020-03-25 00:02-0700\n"
+"PO-Revision-Date: 2017-12-29 05:05+0000\n"
+"Last-Translator: MarongHappy <daemul72@gmail.com>, 2020\n"
 "Language-Team: Korean (https://www.transifex.com/fcitx/teams/12005/ko/)\n"
 "Language: ko\n"
 "MIME-Version: 1.0\n"
@@ -53,7 +55,7 @@ msgstr "한자 모드 변환 키"
 
 #: src/engine.h:56
 msgid "Keyboard Layout"
-msgstr "자판 배열"
+msgstr "키보드 자판"
 
 #: src/engine.h:84
 msgid "Next Candidate"
@@ -81,7 +83,7 @@ msgstr "세벌식 390"
 
 #: src/engine.h:50
 msgid "Sebeolsik Dubeol Layout"
-msgstr "세벌식 두벌배열"
+msgstr "세벌식 두벌자판"
 
 #: src/engine.h:48
 msgid "Sebeolsik Final"
