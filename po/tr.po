@@ -1,17 +1,19 @@
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
-# This file is distributed under the same license as the PACKAGE package.
+# This file is distributed under the same license as the fcitx5-hangul package.
 #
 # Translators:
-# Gökhan Kalayci <gkmediagokhan@gmail.com>, 2017
+# csslayer <wengxt@gmail.com>, 2017
+# abc Def <hdogan1974@gmail.com>, 2020
+#
 msgid ""
 msgstr ""
 "Project-Id-Version: fcitx5-hangul\n"
 "Report-Msgid-Bugs-To: fcitx-dev@googlegroups.com\n"
-"POT-Creation-Date: 2017-12-28 21:08-0800\n"
-"PO-Revision-Date: 2017-04-20 20:35+0000\n"
-"Last-Translator: Gökhan Kalayci <gkmediagokhan@gmail.com>\n"
-"Language-Team: Turkish (http://www.transifex.com/fcitx/fcitx/language/tr/)\n"
+"POT-Creation-Date: 2020-05-06 00:01-0700\n"
+"PO-Revision-Date: 2017-12-29 05:05+0000\n"
+"Last-Translator: abc Def <hdogan1974@gmail.com>, 2020\n"
+"Language-Team: Turkish (https://www.transifex.com/fcitx/teams/12005/tr/)\n"
 "Language: tr\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -34,7 +36,7 @@ msgstr "Dubeolsik"
 msgid "Dubeolsik Yetgeul"
 msgstr "Dubeolsik Yetgeul"
 
-#: src/hangul-addon.conf.in:3 src/hangul.conf.in:3
+#: src/hangul.conf.in:3 src/hangul-addon.conf.in:3
 msgid "Hangul"
 msgstr "Hangul"
 
@@ -56,19 +58,19 @@ msgstr "Klavye Düzeni "
 
 #: src/engine.h:84
 msgid "Next Candidate"
-msgstr ""
+msgstr "Sonraki Aday"
 
 #: src/engine.h:72
 msgid "Next Page"
-msgstr ""
+msgstr "Sonraki Sayfa"
 
 #: src/engine.h:78
 msgid "Prev Candidate"
-msgstr ""
+msgstr "Önceki Aday"
 
 #: src/engine.h:66
 msgid "Prev Page"
-msgstr ""
+msgstr "Önceki Sayfa"
 
 #: src/engine.h:50
 msgid "Romaja"
