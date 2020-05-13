@@ -384,8 +384,6 @@ public:
                                 keyEvent.time());
             }
         }
-
-        FCITX_INFO() << keyEvent.filtered();
     }
 
     void reset() {
