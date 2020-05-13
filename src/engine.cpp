@@ -376,7 +376,16 @@ public:
         updateUI();
         if (keyUsed) {
             keyEvent.filterAndAccept();
+        } else {
+            if (ic_->hasPendingEvents()) {
+                keyEvent.filter();
+                keyEvent.filterAndAccept();
+                ic_->forwardKey(keyEvent.rawKey(), keyEvent.isRelease(),
+                                keyEvent.time());
+            }
         }
+
+        FCITX_INFO() << keyEvent.filtered();
     }
 
     void reset() {
@@ -574,6 +583,10 @@ void HangulEngine::activate(const InputMethodEntry &,
 void HangulEngine::deactivate(const InputMethodEntry &entry,
                               InputContextEvent &event) {
     event.inputContext()->statusArea().clearGroup(StatusGroup::InputMethod);
+    if (event.type() == EventType::InputContextSwitchInputMethod) {
+        auto state = event.inputContext()->propertyFor(&factory_);
+        state->flush();
+    }
     reset(entry, event);
 }
 
