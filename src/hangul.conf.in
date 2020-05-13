@@ -4,3 +4,4 @@ Icon=fcitx-hangul
 Addon=hangul
 Configurable=True
 Label=한
+LangCode=ko
