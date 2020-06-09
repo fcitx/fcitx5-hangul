@@ -376,13 +376,6 @@ public:
         updateUI();
         if (keyUsed) {
             keyEvent.filterAndAccept();
-        } else {
-            if (ic_->hasPendingEvents()) {
-                keyEvent.filter();
-                keyEvent.filterAndAccept();
-                ic_->forwardKey(keyEvent.rawKey(), keyEvent.isRelease(),
-                                keyEvent.time());
-            }
         }
     }
 
