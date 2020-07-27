@@ -83,8 +83,7 @@ private:
 class HangulState : public InputContextProperty {
 public:
     HangulState(HangulEngine *engine, InputContext *ic)
-        : engine_(engine), ic_(ic), context_(nullptr, &hangul_ic_delete),
-          hanjaList_(nullptr, &hanja_list_delete) {
+        : engine_(engine), ic_(ic) {
         configure();
     }
 
@@ -533,8 +532,8 @@ public:
 private:
     HangulEngine *engine_;
     InputContext *ic_;
-    std::unique_ptr<HangulInputContext, decltype(&hangul_ic_delete)> context_;
-    std::unique_ptr<HanjaList, decltype(&hanja_list_delete)> hanjaList_;
+    UniqueCPtr<HangulInputContext, &hangul_ic_delete> context_;
+    UniqueCPtr<HanjaList, &hanja_list_delete> hanjaList_;
     UString preedit_;
     LookupMethod lastLookupMethod_;
 };
@@ -542,8 +541,7 @@ private:
 HangulEngine::HangulEngine(Instance *instance)
     : instance_(instance),
       factory_([this](InputContext &ic) { return new HangulState(this, &ic); }),
-      table_(hanja_table_load(nullptr), &hanja_table_delete),
-      symbolTable_(nullptr, &hanja_table_delete) {
+      table_(hanja_table_load(nullptr)) {
     if (!table_) {
         throw std::runtime_error("Failed to load hanja table.");
     }

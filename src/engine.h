@@ -132,8 +132,8 @@ private:
     Instance *instance_;
     HangulConfig config_;
     FactoryFor<HangulState> factory_;
-    std::unique_ptr<HanjaTable, decltype(&hanja_table_delete)> table_;
-    std::unique_ptr<HanjaTable, decltype(&hanja_table_delete)> symbolTable_;
+    UniqueCPtr<HanjaTable, hanja_table_delete> table_;
+    UniqueCPtr<HanjaTable, hanja_table_delete> symbolTable_;
     SimpleAction action_;
 };
 
