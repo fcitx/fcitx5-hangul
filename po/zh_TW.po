@@ -4,14 +4,15 @@
 #
 # Translators:
 # csslayer <wengxt@gmail.com>, 2017
-# Jeff Huang <s8321414@gmail.com>, 2017
+# 黃柏諺 <s8321414@gmail.com>, 2017
+#
 msgid ""
 msgstr ""
-"Project-Id-Version: fcitx5-hangul\n"
+"Project-Id-Version: fcitx5-chewing\n"
 "Report-Msgid-Bugs-To: fcitx-dev@googlegroups.com\n"
-"POT-Creation-Date: 2017-12-30 00:01-0800\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: Jeff Huang <s8321414@gmail.com>, 2017\n"
+"POT-Creation-Date: 2020-11-02 14:17-0800\n"
+"PO-Revision-Date: 2017-12-29 05:05+0000\n"
+"Last-Translator: 黃柏諺 <s8321414@gmail.com>, 2017\n"
 "Language-Team: Chinese (Taiwan) (https://www.transifex.com/fcitx/teams/12005/"
 "zh_TW/)\n"
 "Language: zh_TW\n"
@@ -20,19 +21,19 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 
-#: src/engine.h:51
+#: src/engine.h:40
 msgid "Ahnmatae"
 msgstr "安馬太鍵盤"
 
-#: src/engine.h:87
+#: src/engine.h:76
 msgid "Auto Reorder"
 msgstr "自動排序"
 
-#: src/engine.h:46
+#: src/engine.h:35
 msgid "Dubeolsik"
 msgstr "Dubeolsik"
 
-#: src/engine.h:47
+#: src/engine.h:36
 msgid "Dubeolsik Yetgeul"
 msgstr "Dubeolsik Yetgeul"
 
@@ -44,66 +45,76 @@ msgstr "韓文"
 msgid "Hangul Wrapper For Fcitx"
 msgstr "Fcitx 的韓文封裝"
 
-#: src/engine.h:89
+#: org.fcitx.fcitx5-hangul.metainfo.xml.in:8
+#, fuzzy
+msgid "Hangul engine for Fcitx 5"
+msgstr "Fcitx 的韓文封裝"
+
+#: org.fcitx.fcitx5-hangul.metainfo.xml.in:7
+#, fuzzy
+msgid "Hangul for Fcitx 5"
+msgstr "Fcitx 的韓文封裝"
+
+#: src/engine.h:78
 msgid "Hanja Mode"
 msgstr "漢字模式"
 
-#: src/engine.h:60
+#: src/engine.h:49
 msgid "Hanja Mode Toggle Key"
 msgstr "漢字模式切換鍵"
 
-#: src/engine.h:56
+#: src/engine.h:45
 msgid "Keyboard Layout"
 msgstr "鍵盤配置"
 
-#: src/engine.h:84
+#: src/engine.h:73
 msgid "Next Candidate"
 msgstr "下個候選字"
 
-#: src/engine.h:72
+#: src/engine.h:61
 msgid "Next Page"
 msgstr "下一頁"
 
-#: src/engine.h:78
+#: src/engine.h:67
 msgid "Prev Candidate"
 msgstr "前一個候選字"
 
-#: src/engine.h:66
+#: src/engine.h:55
 msgid "Prev Page"
 msgstr "前一頁"
 
-#: src/engine.h:50
+#: src/engine.h:39
 msgid "Romaja"
 msgstr "羅馬字"
 
-#: src/engine.h:47
+#: src/engine.h:36
 msgid "Sebeolsik 390"
 msgstr "Sebeolsik 390"
 
-#: src/engine.h:50
+#: src/engine.h:39
 msgid "Sebeolsik Dubeol Layout"
 msgstr "Sebeolsik Dubeol Layout"
 
-#: src/engine.h:48
+#: src/engine.h:37
 msgid "Sebeolsik Final"
 msgstr "Sebeolsik Final"
 
-#: src/engine.h:48
+#: src/engine.h:37
 msgid "Sebeolsik Noshift"
 msgstr "Sebeolsik Noshift"
 
-#: src/engine.h:49
+#: src/engine.h:38
 msgid "Sebeolsik Yetgeul"
 msgstr "Sebeolsik Yetgeul"
 
-#: src/engine.h:133
+#: src/engine.h:122
 msgid "Use Hangul"
 msgstr "使用韓文"
 
-#: src/engine.h:132
+#: src/engine.h:121
 msgid "Use Hanja"
 msgstr "使用漢字"
 
-#: src/engine.h:88
+#: src/engine.h:77
 msgid "Word Commit"
 msgstr "單字提交"

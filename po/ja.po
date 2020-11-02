@@ -1,41 +1,41 @@
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
-# This file is distributed under the same license as the PACKAGE package.
+# This file is distributed under the same license as the fcitx5-hangul package.
 #
 # Translators:
-# WAKAYAMA Shirou <shirou.faw@gmail.com>, 2013
-# csslayer <wengxt@gmail.com>, 2013
+# csslayer <wengxt@gmail.com>, 2017
+#
 msgid ""
 msgstr ""
-"Project-Id-Version: fcitx5-hangul\n"
+"Project-Id-Version: fcitx5-chewing\n"
 "Report-Msgid-Bugs-To: fcitx-dev@googlegroups.com\n"
-"POT-Creation-Date: 2017-12-28 21:08-0800\n"
-"PO-Revision-Date: 2013-06-27 00:23+0000\n"
-"Last-Translator: csslayer <wengxt@gmail.com>\n"
-"Language-Team: Japanese (http://www.transifex.com/fcitx/fcitx/language/ja/)\n"
+"POT-Creation-Date: 2020-11-02 14:17-0800\n"
+"PO-Revision-Date: 2017-12-29 05:05+0000\n"
+"Last-Translator: csslayer <wengxt@gmail.com>, 2017\n"
+"Language-Team: Japanese (https://www.transifex.com/fcitx/teams/12005/ja/)\n"
 "Language: ja\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 
-#: src/engine.h:51
+#: src/engine.h:40
 msgid "Ahnmatae"
 msgstr "Ahnmatae"
 
-#: src/engine.h:87
+#: src/engine.h:76
 msgid "Auto Reorder"
 msgstr "自動並び替え"
 
-#: src/engine.h:46
+#: src/engine.h:35
 msgid "Dubeolsik"
 msgstr "Dubeolsik"
 
-#: src/engine.h:47
+#: src/engine.h:36
 msgid "Dubeolsik Yetgeul"
 msgstr "Dubeolsik Yetgeul"
 
-#: src/hangul-addon.conf.in:3 src/hangul.conf.in:3
+#: src/hangul.conf.in:3 src/hangul-addon.conf.in:3
 msgid "Hangul"
 msgstr "ハングル"
 
@@ -43,66 +43,76 @@ msgstr "ハングル"
 msgid "Hangul Wrapper For Fcitx"
 msgstr "Fcitx 用 ハングルラッパー"
 
-#: src/engine.h:89
+#: org.fcitx.fcitx5-hangul.metainfo.xml.in:8
+#, fuzzy
+msgid "Hangul engine for Fcitx 5"
+msgstr "Fcitx 用 ハングルラッパー"
+
+#: org.fcitx.fcitx5-hangul.metainfo.xml.in:7
+#, fuzzy
+msgid "Hangul for Fcitx 5"
+msgstr "Fcitx 用 ハングルラッパー"
+
+#: src/engine.h:78
 msgid "Hanja Mode"
 msgstr "朝鮮漢字モード"
 
-#: src/engine.h:60
+#: src/engine.h:49
 msgid "Hanja Mode Toggle Key"
 msgstr "朝鮮漢字モードのトリガーとなるキー"
 
-#: src/engine.h:56
+#: src/engine.h:45
 msgid "Keyboard Layout"
 msgstr "キーボードレイアウト"
 
-#: src/engine.h:84
+#: src/engine.h:73
 msgid "Next Candidate"
 msgstr ""
 
-#: src/engine.h:72
+#: src/engine.h:61
 msgid "Next Page"
 msgstr ""
 
-#: src/engine.h:78
+#: src/engine.h:67
 msgid "Prev Candidate"
 msgstr ""
 
-#: src/engine.h:66
+#: src/engine.h:55
 msgid "Prev Page"
 msgstr ""
 
-#: src/engine.h:50
+#: src/engine.h:39
 msgid "Romaja"
 msgstr "Romaja"
 
-#: src/engine.h:47
+#: src/engine.h:36
 msgid "Sebeolsik 390"
 msgstr "Sebeolsik 390"
 
-#: src/engine.h:50
+#: src/engine.h:39
 msgid "Sebeolsik Dubeol Layout"
 msgstr "Sebeolsik Dubeol レイアウト"
 
-#: src/engine.h:48
+#: src/engine.h:37
 msgid "Sebeolsik Final"
 msgstr "Sebeolsik Final"
 
-#: src/engine.h:48
+#: src/engine.h:37
 msgid "Sebeolsik Noshift"
 msgstr "Sebeolsik Noshift"
 
-#: src/engine.h:49
+#: src/engine.h:38
 msgid "Sebeolsik Yetgeul"
 msgstr "Sebeolsik Yetgeul"
 
-#: src/engine.h:133
+#: src/engine.h:122
 msgid "Use Hangul"
 msgstr "ハングルを使う"
 
-#: src/engine.h:132
+#: src/engine.h:121
 msgid "Use Hanja"
 msgstr "朝鮮漢字を使う"
 
-#: src/engine.h:88
+#: src/engine.h:77
 msgid "Word Commit"
 msgstr "単語確定"
