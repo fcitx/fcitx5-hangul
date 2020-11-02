@@ -7,9 +7,9 @@
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: fcitx5-chewing\n"
+"Project-Id-Version: fcitx5-hangul\n"
 "Report-Msgid-Bugs-To: fcitx-dev@googlegroups.com\n"
-"POT-Creation-Date: 2020-11-02 14:17-0800\n"
+"POT-Creation-Date: 2020-11-02 15:55-0800\n"
 "PO-Revision-Date: 2017-12-29 05:05+0000\n"
 "Last-Translator: csslayer <wengxt@gmail.com>, 2017\n"
 "Language-Team: Catalan (https://www.transifex.com/fcitx/teams/12005/ca/)\n"
@@ -44,14 +44,12 @@ msgid "Hangul Wrapper For Fcitx"
 msgstr "Contenidor hangul per al fcitx"
 
 #: org.fcitx.fcitx5-hangul.metainfo.xml.in:8
-#, fuzzy
 msgid "Hangul engine for Fcitx 5"
-msgstr "Contenidor hangul per al fcitx"
+msgstr ""
 
 #: org.fcitx.fcitx5-hangul.metainfo.xml.in:7
-#, fuzzy
 msgid "Hangul for Fcitx 5"
-msgstr "Contenidor hangul per al fcitx"
+msgstr ""
 
 #: src/engine.h:78
 msgid "Hanja Mode"
