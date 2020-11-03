@@ -3,15 +3,15 @@
 # This file is distributed under the same license as the fcitx5-hangul package.
 #
 # Translators:
-# scootergrisen, 2019
+# scootergrisen, 2020
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: fcitx5-hangul\n"
 "Report-Msgid-Bugs-To: fcitx-dev@googlegroups.com\n"
-"POT-Creation-Date: 2020-11-02 15:55-0800\n"
+"POT-Creation-Date: 2020-11-03 00:02-0800\n"
 "PO-Revision-Date: 2017-12-29 05:05+0000\n"
-"Last-Translator: scootergrisen, 2019\n"
+"Last-Translator: scootergrisen, 2020\n"
 "Language-Team: Danish (https://www.transifex.com/fcitx/teams/12005/da/)\n"
 "Language: da\n"
 "MIME-Version: 1.0\n"
@@ -45,11 +45,11 @@ msgstr "Hangul-wrapper til Fcitx"
 
 #: org.fcitx.fcitx5-hangul.metainfo.xml.in:8
 msgid "Hangul engine for Fcitx 5"
-msgstr ""
+msgstr "Hangul-motor til Fcitx 5"
 
 #: org.fcitx.fcitx5-hangul.metainfo.xml.in:7
 msgid "Hangul for Fcitx 5"
-msgstr ""
+msgstr "Hangul til Fcitx 5"
 
 #: src/engine.h:78
 msgid "Hanja Mode"
