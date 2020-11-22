@@ -140,6 +140,7 @@ private:
 class HangulEngineFactory : public AddonFactory {
 public:
     AddonInstance *create(AddonManager *manager) override {
+        registerDomain("fcitx5-hangul", FCITX_INSTALL_LOCALEDIR);
         return new HangulEngine(manager->instance());
     }
 };
