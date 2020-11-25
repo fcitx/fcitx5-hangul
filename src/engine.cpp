@@ -571,7 +571,6 @@ void HangulEngine::activate(const InputMethodEntry &,
 
 void HangulEngine::deactivate(const InputMethodEntry &entry,
                               InputContextEvent &event) {
-    event.inputContext()->statusArea().clearGroup(StatusGroup::InputMethod);
     if (event.type() == EventType::InputContextSwitchInputMethod) {
         auto state = event.inputContext()->propertyFor(&factory_);
         state->flush();
