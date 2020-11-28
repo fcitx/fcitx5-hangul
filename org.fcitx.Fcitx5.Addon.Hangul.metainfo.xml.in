@@ -7,6 +7,8 @@
   <name>Hangul for Fcitx 5</name>
   <summary>Hangul engine for Fcitx 5</summary>
   <url type="homepage">https://fcitx-im.org</url>
+  <url type="bugtracker">https://github.com/fcitx/fcitx5-hangul/issues</url>
+  <project_group>Fcitx</project_group>
   <releases>
     <release version="5.0.0" date="2020-10-30"/>
   </releases>
