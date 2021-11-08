@@ -1,7 +1,7 @@
 /*
  * SPDX-FileCopyrightText: 2010~2017 CSSlayer <wengxt@gmail.com>
  *
- * SPDX-License-Identifier: GPL-2.0-or-later
+ * SPDX-License-Identifier: LGPL-2.1-or-later
  *
  */
 
