@@ -4,14 +4,15 @@
 #
 # Translators:
 # csslayer <wengxt@gmail.com>, 2017
+# Dmitry <dmitrydmitry761@gmail.com>, 2022
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: fcitx5-hangul\n"
 "Report-Msgid-Bugs-To: fcitx-dev@googlegroups.com\n"
-"POT-Creation-Date: 2020-11-02 15:55-0800\n"
+"POT-Creation-Date: 2022-01-15 20:24+0000\n"
 "PO-Revision-Date: 2017-12-29 05:05+0000\n"
-"Last-Translator: csslayer <wengxt@gmail.com>, 2017\n"
+"Last-Translator: Dmitry <dmitrydmitry761@gmail.com>, 2022\n"
 "Language-Team: Russian (https://www.transifex.com/fcitx/teams/12005/ru/)\n"
 "Language: ru\n"
 "MIME-Version: 1.0\n"
@@ -37,21 +38,21 @@ msgstr "Dubeolsik"
 msgid "Dubeolsik Yetgeul"
 msgstr "Dubeolsik Yetgeul"
 
-#: src/hangul.conf.in:3 src/hangul-addon.conf.in:3
+#: src/hangul.conf.in:3 src/hangul-addon.conf.in.in:3
 msgid "Hangul"
 msgstr "Hangul"
 
-#: src/hangul-addon.conf.in:4
+#: src/hangul-addon.conf.in.in:4
 msgid "Hangul Wrapper For Fcitx"
 msgstr "Обертка Hangul для Fcitx"
 
-#: org.fcitx.fcitx5-hangul.metainfo.xml.in:8
+#: org.fcitx.Fcitx5.Addon.Hangul.metainfo.xml.in:8
 msgid "Hangul engine for Fcitx 5"
-msgstr ""
+msgstr "Движок Hangul для Fcitx 5"
 
-#: org.fcitx.fcitx5-hangul.metainfo.xml.in:7
+#: org.fcitx.Fcitx5.Addon.Hangul.metainfo.xml.in:7
 msgid "Hangul for Fcitx 5"
-msgstr ""
+msgstr "Hangul для Fcitx 5"
 
 #: src/engine.h:78
 msgid "Hanja Mode"
@@ -67,19 +68,19 @@ msgstr "Раскладка клавиатуры"
 
 #: src/engine.h:73
 msgid "Next Candidate"
-msgstr ""
+msgstr "Следующий кандидат"
 
 #: src/engine.h:61
 msgid "Next Page"
-msgstr ""
+msgstr "Следующая Cтраница"
 
 #: src/engine.h:67
 msgid "Prev Candidate"
-msgstr ""
+msgstr "Предыдущий кандидат"
 
 #: src/engine.h:55
 msgid "Prev Page"
-msgstr ""
+msgstr "Предыдущая страница"
 
 #: src/engine.h:39
 msgid "Romaja"
