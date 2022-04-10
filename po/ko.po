@@ -5,15 +5,15 @@
 # Translators:
 # csslayer <wengxt@gmail.com>, 2017
 # Bon Keun Seo <scobyseo@gmail.com>, 2017
-# JungHee Lee <daemul72@gmail.com>, 2022
+# Junghee Lee <daemul72@gmail.com>, 2022
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: fcitx5-hangul\n"
 "Report-Msgid-Bugs-To: fcitx-dev@googlegroups.com\n"
-"POT-Creation-Date: 2022-03-01 20:24+0000\n"
+"POT-Creation-Date: 2022-04-10 20:25+0000\n"
 "PO-Revision-Date: 2017-12-29 05:05+0000\n"
-"Last-Translator: JungHee Lee <daemul72@gmail.com>, 2022\n"
+"Last-Translator: Junghee Lee <daemul72@gmail.com>, 2022\n"
 "Language-Team: Korean (https://www.transifex.com/fcitx/teams/12005/ko/)\n"
 "Language: ko\n"
 "MIME-Version: 1.0\n"
@@ -47,11 +47,11 @@ msgstr "Fcitx용 한글 래퍼"
 
 #: org.fcitx.Fcitx5.Addon.Hangul.metainfo.xml.in:8
 msgid "Hangul engine for Fcitx 5"
-msgstr "Fcitx 5용 한글 엔진"
+msgstr "Fcitx5용 한글 엔진"
 
 #: org.fcitx.Fcitx5.Addon.Hangul.metainfo.xml.in:7
 msgid "Hangul for Fcitx 5"
-msgstr "Fcitx 5용 한글"
+msgstr "Fcitx5용 한글"
 
 #: src/engine.h:78
 msgid "Hanja Mode"
@@ -91,7 +91,7 @@ msgstr "세벌식 390"
 
 #: src/engine.h:39
 msgid "Sebeolsik Dubeol Layout"
-msgstr "세벌식 두벌자판"
+msgstr "세벌식 두벌 자판"
 
 #: src/engine.h:37
 msgid "Sebeolsik Final"
