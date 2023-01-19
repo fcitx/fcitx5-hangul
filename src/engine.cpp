@@ -593,6 +593,15 @@ void HangulEngine::reset(const InputMethodEntry &, InputContextEvent &event) {
 
 void HangulEngine::reloadConfig() { readAsIni(config_, "conf/hangul.conf"); }
 
+void HangulEngine::setConfig(const fcitx::RawConfig &rawConfig) {
+    config_.load(rawConfig, true);
+    instance_->inputContextManager().foreach([this](InputContext *ic) {
+        state(ic)->configure();
+        return true;
+    });
+    safeSaveAsIni(config_, "conf/hangul.conf");
+}
+
 HangulState *HangulEngine::state(InputContext *ic) {
     return ic->propertyFor(&factory_);
 }

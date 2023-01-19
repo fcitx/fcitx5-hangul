@@ -103,10 +103,7 @@ public:
 
     const fcitx::Configuration *getConfig() const override { return &config_; }
 
-    void setConfig(const fcitx::RawConfig &rawConfig) override {
-        config_.load(rawConfig, true);
-        safeSaveAsIni(config_, "conf/hangul.conf");
-    }
+    void setConfig(const fcitx::RawConfig &rawConfig) override;
 
     auto &config() { return config_; }
 
