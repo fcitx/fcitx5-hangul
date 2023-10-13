@@ -538,10 +538,21 @@ private:
     LookupMethod lastLookupMethod_;
 };
 
+HanjaTable *loadTable() {
+    const auto &sp = fcitx::StandardPath::global();
+    std::string hanjaTxt =
+        sp.locate(fcitx::StandardPath::Type::Data, "libhangul/hanja/hanja.txt");
+    HanjaTable *table = nullptr;
+    if (!hanjaTxt.empty()) {
+        table = hanja_table_load(hanjaTxt.c_str());
+    }
+    return table ? table : hanja_table_load(nullptr);
+}
+
 HangulEngine::HangulEngine(Instance *instance)
     : instance_(instance),
       factory_([this](InputContext &ic) { return new HangulState(this, &ic); }),
-      table_(hanja_table_load(nullptr)) {
+      table_(loadTable()) {
     if (!table_) {
         throw std::runtime_error("Failed to load hanja table.");
     }
