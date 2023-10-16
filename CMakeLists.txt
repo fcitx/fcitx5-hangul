@@ -11,7 +11,11 @@ include(ECMUninstallTarget)
 find_package(Fcitx5Core 5.0.2 REQUIRED)
 find_package(Gettext REQUIRED)
 find_package(PkgConfig REQUIRED)
-pkg_check_modules(Hangul IMPORTED_TARGET "libhangul>=0.0.12" REQUIRED)
+
+if (NOT DEFINED HANGUL_TARGET)
+    pkg_check_modules(Hangul IMPORTED_TARGET "libhangul>=0.0.12" REQUIRED)
+    set(HANGUL_TARGET PkgConfig::Hangul)
+endif()
 
 include("${FCITX_INSTALL_CMAKECONFIG_DIR}/Fcitx5Utils/Fcitx5CompilerSettings.cmake")
 add_definitions(-DFCITX_GETTEXT_DOMAIN=\"fcitx5-hangul\" -D_GNU_SOURCE)
