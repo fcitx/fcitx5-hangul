@@ -130,7 +130,7 @@ public:
         if (!preedit.empty()) {
             auto utf8 = ustringToUTF8(preedit);
             if (*engine_->config().wordCommit || *engine_->config().hanjaMode) {
-                hanjaKey = utf8;
+                hanjaKey = std::move(utf8);
                 lookupMethod = LOOKUP_METHOD_PREFIX;
             } else {
                 auto cursorPos = ic_->surroundingText().cursor();
@@ -141,7 +141,7 @@ public:
                 if (!substr.empty()) {
                     hanjaKey = substr + utf8;
                 } else {
-                    hanjaKey = utf8;
+                    hanjaKey = std::move(utf8);
                 }
                 lookupMethod = LOOKUP_METHOD_SUFFIX;
             }
@@ -151,7 +151,7 @@ public:
                 !ic_->surroundingText().isValid()) {
                 return;
             }
-            auto surroundingStr = ic_->surroundingText().text();
+            const auto &surroundingStr = ic_->surroundingText().text();
             auto cursorPos = ic_->surroundingText().cursor();
             auto anchorPos = ic_->surroundingText().anchor();
             if (cursorPos != anchorPos) {
@@ -172,7 +172,7 @@ public:
         }
     }
 
-    HanjaList *lookupTable(const std::string key, int method) {
+    HanjaList *lookupTable(const std::string &key, int method) {
         HanjaList *list = nullptr;
 
         if (key.empty())
@@ -411,8 +411,11 @@ public:
 
         ic_->inputPanel().reset();
 
-        auto pre1 = ustringToUTF8(preedit_);
-        auto pre2 = hic_preedit ? ustringToUTF8(hic_preedit) : "";
+        std::string pre1 = ustringToUTF8(preedit_);
+        std::string pre2;
+        if (hic_preedit) {
+            pre2 = ustringToUTF8(hic_preedit);
+        }
 
         if (!pre1.empty() || !pre2.empty()) {
             Text text;
