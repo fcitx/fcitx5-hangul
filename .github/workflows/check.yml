@@ -62,7 +62,7 @@ jobs:
       - name: Build and Install fcitx5-hangul
         uses: fcitx/github-actions@cmake
         with:
-          path: fcitx5-anthy
+          path: fcitx5-hangul
       - name: Test
         run: |
           ctest --test-dir fcitx5-hangul/build
