@@ -6,6 +6,9 @@
  */
 
 #include "engine.h"
+#include <fcitx-utils/charutils.h>
+#include <fcitx-utils/key.h>
+#include <fcitx-utils/keysym.h>
 #include <fcitx-utils/standardpath.h>
 #include <fcitx-utils/utf8.h>
 #include <fcitx/action.h>
@@ -14,7 +17,9 @@
 #include <fcitx/inputcontextmanager.h>
 #include <fcitx/inputpanel.h>
 #include <fcitx/statusarea.h>
+#include <fcitx/userinterface.h>
 #include <fcitx/userinterfacemanager.h>
+#include <hangul.h>
 
 static const char *keyboardId[] = {"2",  "2y", "39", "3f", "3s",
                                    "3y", "32", "ro", "ahn"};
@@ -260,7 +265,7 @@ public:
 
         // Handle candidate selection.
         auto candList = ic_->inputPanel().candidateList();
-        if (candList && candList->size() > 0) {
+        if (candList && !candList->empty()) {
             if (keyEvent.key().checkKeyList(*engine_->config().prevPageKey)) {
                 candList->toPageable()->prev();
                 ic_->updateUserInterface(UserInterfaceComponent::InputPanel);
@@ -332,7 +337,18 @@ public:
                 flush();
             }
 
-            keyUsed = hangul_ic_process(context_.get(), keyEvent.key().sym());
+            // revert capslock
+            if (keyEvent.rawKey().states().test(KeyState::CapsLock)) {
+                if (sym >= 'A' && sym <= 'z') {
+                    if (charutils::isupper(sym)) {
+                        sym = static_cast<KeySym>(charutils::tolower(sym));
+                    } else {
+                        sym = static_cast<KeySym>(charutils::toupper(sym));
+                    }
+                }
+            }
+
+            keyUsed = hangul_ic_process(context_.get(), sym);
             bool notFlush = false;
 
             const ucschar *str = hangul_ic_get_commit_string(context_.get());
@@ -340,7 +356,7 @@ public:
                 const ucschar *hic_preedit;
 
                 hic_preedit = hangul_ic_get_preedit_string(context_.get());
-                if (hic_preedit != NULL && hic_preedit[0] != 0) {
+                if (hic_preedit != nullptr && hic_preedit[0] != 0) {
                     preedit_.append(UString(str));
                 } else {
                     preedit_.append(UString(str));
@@ -353,7 +369,7 @@ public:
                     preedit_.clear();
                 }
             } else {
-                if (str != NULL && str[0] != 0) {
+                if (str != nullptr && str[0] != 0) {
                     auto commit = ustringToUTF8(str);
                     if (!commit.empty()) {
                         ic_->commitString(commit);
