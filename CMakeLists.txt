@@ -8,9 +8,13 @@ include(FeatureSummary)
 include(GNUInstallDirs)
 include(ECMUninstallTarget)
 
-find_package(Fcitx5Core 5.0.2 REQUIRED)
+find_package(Fcitx5Core 5.1.9 REQUIRED)
 find_package(Gettext REQUIRED)
 find_package(PkgConfig REQUIRED)
+find_package(Fcitx5Module REQUIRED COMPONENTS TestFrontend)
+
+option(ENABLE_TEST "Build Test" On)
+option(ENABLE_COVERAGE "Build the project with gcov support (Need ENABLE_TEST=On)" Off)
 
 if (NOT DEFINED HANGUL_TARGET)
     pkg_check_modules(Hangul IMPORTED_TARGET "libhangul>=0.0.12" REQUIRED)
@@ -25,6 +29,19 @@ add_subdirectory(po)
 add_subdirectory(src)
 add_subdirectory(data)
 add_subdirectory(list)
+
+if (ENABLE_TEST)
+    enable_testing()
+    add_subdirectory(test)
+
+    if (ENABLE_COVERAGE)
+        add_custom_target(coverage
+                        COMMAND "${CMAKE_CTEST_COMMAND}"
+                        COMMAND lcov --gcov-tool "${GCOV_TOOL}" --no-external --capture --directory ./ -b "${CMAKE_CURRENT_SOURCE_DIR}" --output-file coverage.info
+                        COMMAND genhtml coverage.info --output-directory "coverage_pages"
+                        WORKING_DIRECTORY ${CMAKE_CURRENT_BINARY_DIR})
+    endif()
+endif ()
 
 fcitx5_translate_desktop_file(org.fcitx.Fcitx5.Addon.Hangul.metainfo.xml.in
                               org.fcitx.Fcitx5.Addon.Hangul.metainfo.xml XML)
