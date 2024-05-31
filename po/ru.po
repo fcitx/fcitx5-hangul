@@ -4,15 +4,15 @@
 #
 # Translators:
 # csslayer <wengxt@gmail.com>, 2017
-# Dmitry <dmitrydmitry761@gmail.com>, 2023
+# Dmitry <dmitrydmitry761@gmail.com>, 2024
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: fcitx5-hangul\n"
 "Report-Msgid-Bugs-To: fcitx-dev@googlegroups.com\n"
-"POT-Creation-Date: 2023-07-25 20:24+0000\n"
+"POT-Creation-Date: 2024-05-31 20:25+0000\n"
 "PO-Revision-Date: 2017-12-29 05:05+0000\n"
-"Last-Translator: Dmitry <dmitrydmitry761@gmail.com>, 2023\n"
+"Last-Translator: Dmitry <dmitrydmitry761@gmail.com>, 2024\n"
 "Language-Team: Russian (https://app.transifex.com/fcitx/teams/12005/ru/)\n"
 "Language: ru\n"
 "MIME-Version: 1.0\n"
@@ -68,7 +68,7 @@ msgstr "Раскладка клавиатуры"
 
 #: src/engine.h:73
 msgid "Next Candidate"
-msgstr "Следующий кандидат"
+msgstr "Следующее слово-кандидат"
 
 #: src/engine.h:61
 msgid "Next Page"
@@ -76,7 +76,7 @@ msgstr "Следующая Cтраница"
 
 #: src/engine.h:67
 msgid "Prev Candidate"
-msgstr "Предыдущий кандидат"
+msgstr "Предыдущее слово-кандидат"
 
 #: src/engine.h:55
 msgid "Prev Page"
