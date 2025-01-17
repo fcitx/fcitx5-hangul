@@ -6,20 +6,35 @@
  */
 
 #include "engine.h"
+#include <algorithm>
+#include <cstdlib>
+#include <fcitx-config/iniparser.h>
+#include <fcitx-config/rawconfig.h>
+#include <fcitx-utils/capabilityflags.h>
 #include <fcitx-utils/charutils.h>
 #include <fcitx-utils/key.h>
 #include <fcitx-utils/keysym.h>
+#include <fcitx-utils/misc.h>
 #include <fcitx-utils/standardpath.h>
+#include <fcitx-utils/textformatflags.h>
 #include <fcitx-utils/utf8.h>
 #include <fcitx/action.h>
+#include <fcitx/addoninstance.h>
 #include <fcitx/candidatelist.h>
+#include <fcitx/event.h>
 #include <fcitx/inputcontext.h>
 #include <fcitx/inputcontextmanager.h>
+#include <fcitx/inputmethodentry.h>
 #include <fcitx/inputpanel.h>
 #include <fcitx/statusarea.h>
+#include <fcitx/text.h>
 #include <fcitx/userinterface.h>
 #include <fcitx/userinterfacemanager.h>
 #include <hangul.h>
+#include <memory>
+#include <stdexcept>
+#include <string>
+#include <utility>
 
 static const char *keyboardId[] = {"2",  "2y", "39", "3f", "3s",
                                    "3y", "32", "ro", "ahn"};
@@ -27,6 +42,8 @@ static const char *keyboardId[] = {"2",  "2y", "39", "3f", "3s",
 constexpr auto MAX_LENGTH = 40;
 
 namespace fcitx {
+
+namespace {
 
 const KeyList &selectionKeys() {
     static const KeyList selectionKeys{
@@ -44,7 +61,7 @@ std::string ustringToUTF8(const UString &ustr) {
     return result;
 }
 
-static std::string subUTF8String(const std::string &str, int p1, int p2) {
+std::string subUTF8String(const std::string &str, int p1, int p2) {
     int limit;
     int pos;
     int n;
@@ -70,6 +87,19 @@ static std::string subUTF8String(const std::string &str, int p1, int p2) {
 
     return std::string(begin, end);
 }
+
+HanjaTable *loadTable() {
+    const auto &sp = fcitx::StandardPath::global();
+    std::string hanjaTxt =
+        sp.locate(fcitx::StandardPath::Type::Data, "libhangul/hanja/hanja.txt");
+    HanjaTable *table = nullptr;
+    if (!hanjaTxt.empty()) {
+        table = hanja_table_load(hanjaTxt.c_str());
+    }
+    return table ? table : hanja_table_load(nullptr);
+}
+
+} // namespace
 
 class HangulCandidate : public CandidateWord {
 public:
@@ -100,9 +130,9 @@ public:
             reinterpret_cast<void *>(&HangulState::onTransitionCallback), this);
     }
 
-    static bool onTransitionCallback(HangulInputContext *, ucschar c,
-                                     const ucschar *, void *data) {
-        auto that = static_cast<HangulState *>(data);
+    static bool onTransitionCallback(HangulInputContext * /*unused*/, ucschar c,
+                                     const ucschar * /*unused*/, void *data) {
+        auto *that = static_cast<HangulState *>(data);
         return that->onTransition(c);
     }
 
@@ -110,13 +140,15 @@ public:
         if (!*engine_->config().autoReorder) {
             if (hangul_is_choseong(c)) {
                 if (hangul_ic_has_jungseong(context_.get()) ||
-                    hangul_ic_has_jongseong(context_.get()))
+                    hangul_ic_has_jongseong(context_.get())) {
                     return false;
+                }
             }
 
             if (hangul_is_jungseong(c)) {
-                if (hangul_ic_has_jongseong(context_.get()))
+                if (hangul_ic_has_jongseong(context_.get())) {
                     return false;
+                }
             }
         }
 
@@ -125,18 +157,18 @@ public:
 
     void updateLookupTable(bool checkSurrounding) {
         std::string hanjaKey;
-        LookupMethod lookupMethod = LOOKUP_METHOD_PREFIX;
+        LookupMethod lookupMethod = LookupMethod::LOOKUP_METHOD_PREFIX;
 
         hanjaList_.reset();
 
-        auto hic_preedit = hangul_ic_get_preedit_string(context_.get());
+        const auto *hic_preedit = hangul_ic_get_preedit_string(context_.get());
         UString preedit = preedit_;
         preedit.append(UString(hic_preedit));
         if (!preedit.empty()) {
             auto utf8 = ustringToUTF8(preedit);
             if (*engine_->config().wordCommit || *engine_->config().hanjaMode) {
                 hanjaKey = std::move(utf8);
-                lookupMethod = LOOKUP_METHOD_PREFIX;
+                lookupMethod = LookupMethod::LOOKUP_METHOD_PREFIX;
             } else {
                 auto cursorPos = ic_->surroundingText().cursor();
                 auto substr =
@@ -148,7 +180,7 @@ public:
                 } else {
                     hanjaKey = std::move(utf8);
                 }
-                lookupMethod = LOOKUP_METHOD_SUFFIX;
+                lookupMethod = LookupMethod::LOOKUP_METHOD_SUFFIX;
             }
         } else if (checkSurrounding) {
 
@@ -162,12 +194,12 @@ public:
             if (cursorPos != anchorPos) {
                 // If we have selection in surrounding text, we use that.
                 hanjaKey = subUTF8String(surroundingStr, cursorPos, anchorPos);
-                lookupMethod = LOOKUP_METHOD_EXACT;
+                lookupMethod = LookupMethod::LOOKUP_METHOD_EXACT;
             } else {
                 hanjaKey =
                     subUTF8String(surroundingStr,
                                   static_cast<int>(cursorPos) - 64, cursorPos);
-                lookupMethod = LOOKUP_METHOD_SUFFIX;
+                lookupMethod = LookupMethod::LOOKUP_METHOD_SUFFIX;
             }
         }
 
@@ -177,22 +209,23 @@ public:
         }
     }
 
-    HanjaList *lookupTable(const std::string &key, int method) {
+    HanjaList *lookupTable(const std::string &key, LookupMethod method) {
         HanjaList *list = nullptr;
 
-        if (key.empty())
+        if (key.empty()) {
             return nullptr;
+        }
 
         decltype(&hanja_table_match_exact) func = nullptr;
 
         switch (method) {
-        case LOOKUP_METHOD_EXACT:
+        case LookupMethod::LOOKUP_METHOD_EXACT:
             func = &hanja_table_match_exact;
             break;
-        case LOOKUP_METHOD_PREFIX:
+        case LookupMethod::LOOKUP_METHOD_PREFIX:
             func = &hanja_table_match_prefix;
             break;
-        case LOOKUP_METHOD_SUFFIX:
+        case LookupMethod::LOOKUP_METHOD_SUFFIX:
             func = &hanja_table_match_suffix;
             break;
         }
@@ -200,7 +233,7 @@ public:
             return nullptr;
         }
 
-        if (auto symbolTable = engine_->symbolTable()) {
+        if (auto *symbolTable = engine_->symbolTable()) {
             list = func(symbolTable, key.data());
         }
 
@@ -224,7 +257,8 @@ public:
                 cleanup();
             }
             updateUI();
-            return keyEvent.filterAndAccept();
+            keyEvent.filterAndAccept();
+            return;
         }
 
         auto sym = keyEvent.key().sym();
@@ -234,7 +268,7 @@ public:
         }
 
         KeyStates s;
-        for (auto keyList :
+        for (const auto *keyList :
              {&*engine_->config().hanjaModeToggleKey,
               &*engine_->config().prevPageKey, &*engine_->config().nextPageKey,
               &*engine_->config().prevCandidateKey,
@@ -269,24 +303,29 @@ public:
             if (keyEvent.key().checkKeyList(*engine_->config().prevPageKey)) {
                 candList->toPageable()->prev();
                 ic_->updateUserInterface(UserInterfaceComponent::InputPanel);
-                return keyEvent.filterAndAccept();
-            } else if (keyEvent.key().checkKeyList(
-                           *engine_->config().nextPageKey)) {
+                keyEvent.filterAndAccept();
+                return;
+            }
+            if (keyEvent.key().checkKeyList(*engine_->config().nextPageKey)) {
                 candList->toPageable()->next();
                 ic_->updateUserInterface(UserInterfaceComponent::InputPanel);
-                return keyEvent.filterAndAccept();
+                keyEvent.filterAndAccept();
+                return;
             }
 
             if (keyEvent.key().checkKeyList(
                     *engine_->config().prevCandidateKey)) {
                 candList->toCursorMovable()->prevCandidate();
                 ic_->updateUserInterface(UserInterfaceComponent::InputPanel);
-                return keyEvent.filterAndAccept();
-            } else if (keyEvent.key().checkKeyList(
-                           *engine_->config().nextCandidateKey)) {
+                keyEvent.filterAndAccept();
+                return;
+            }
+            if (keyEvent.key().checkKeyList(
+                    *engine_->config().nextCandidateKey)) {
                 candList->toCursorMovable()->nextCandidate();
                 ic_->updateUserInterface(UserInterfaceComponent::InputPanel);
-                return keyEvent.filterAndAccept();
+                keyEvent.filterAndAccept();
+                return;
             }
 
             auto idx = keyEvent.key().keyListIndex(selectionKeys());
@@ -294,18 +333,18 @@ public:
                 if (idx < candList->size()) {
                     candList->candidate(idx).select(ic_);
                 }
-                return keyEvent.filterAndAccept();
+                keyEvent.filterAndAccept();
+                return;
             }
 
             if (keyEvent.key().check(FcitxKey_Return)) {
                 auto idx = candList->cursorIndex();
-                if (idx < 0) {
-                    idx = 0;
-                }
+                idx = std::max(idx, 0);
 
                 if (idx < candList->size()) {
                     candList->candidate(idx).select(ic_);
-                    return keyEvent.filterAndAccept();
+                    keyEvent.filterAndAccept();
+                    return;
                 }
             }
 
@@ -406,12 +445,13 @@ public:
     void flush() {
         cleanup();
 
-        auto str = hangul_ic_flush(context_.get());
+        const auto *str = hangul_ic_flush(context_.get());
 
         preedit_ += str;
 
-        if (preedit_.empty())
+        if (preedit_.empty()) {
             return;
+        }
 
         auto utf8 = ustringToUTF8(preedit_);
         if (!utf8.empty()) {
@@ -488,7 +528,8 @@ public:
         hic_preedit = hangul_ic_get_preedit_string(context_.get());
 
         if (!key || !value || !hic_preedit) {
-            return reset();
+            reset();
+            return;
         }
 
         key_len = fcitx::utf8::length(std::string(key));
@@ -496,7 +537,7 @@ public:
         hic_preedit_len = UString(hic_preedit).size();
 
         bool surrounding = false;
-        if (lastLookupMethod_ == LOOKUP_METHOD_PREFIX) {
+        if (lastLookupMethod_ == LookupMethod::LOOKUP_METHOD_PREFIX) {
             if (preedit_len == 0 && hic_preedit_len == 0) {
                 /* remove surrounding_text */
                 if (key_len > 0) {
@@ -534,7 +575,8 @@ public:
             }
 
             /* remove surrounding_text */
-            if (LOOKUP_METHOD_EXACT != lastLookupMethod_ && key_len > 0) {
+            if (LookupMethod::LOOKUP_METHOD_EXACT != lastLookupMethod_ &&
+                key_len > 0) {
                 ic_->deleteSurroundingText(-key_len, key_len);
                 surrounding = true;
             }
@@ -556,17 +598,6 @@ private:
     UString preedit_;
     LookupMethod lastLookupMethod_;
 };
-
-HanjaTable *loadTable() {
-    const auto &sp = fcitx::StandardPath::global();
-    std::string hanjaTxt =
-        sp.locate(fcitx::StandardPath::Type::Data, "libhangul/hanja/hanja.txt");
-    HanjaTable *table = nullptr;
-    if (!hanjaTxt.empty()) {
-        table = hanja_table_load(hanjaTxt.c_str());
-    }
-    return table ? table : hanja_table_load(nullptr);
-}
 
 HangulEngine::HangulEngine(Instance *instance)
     : instance_(instance),
@@ -592,7 +623,7 @@ HangulEngine::HangulEngine(Instance *instance)
     instance_->inputContextManager().registerProperty("hangulState", &factory_);
 }
 
-void HangulEngine::activate(const InputMethodEntry &,
+void HangulEngine::activate(const InputMethodEntry & /*entry*/,
                             InputContextEvent &event) {
     event.inputContext()->statusArea().addAction(StatusGroup::InputMethod,
                                                  &action_);
@@ -602,22 +633,24 @@ void HangulEngine::activate(const InputMethodEntry &,
 void HangulEngine::deactivate(const InputMethodEntry &entry,
                               InputContextEvent &event) {
     if (event.type() == EventType::InputContextSwitchInputMethod) {
-        auto state = event.inputContext()->propertyFor(&factory_);
+        auto *state = event.inputContext()->propertyFor(&factory_);
         state->flush();
     }
     reset(entry, event);
 }
 
-void HangulEngine::keyEvent(const InputMethodEntry &, KeyEvent &keyEvent) {
+void HangulEngine::keyEvent(const InputMethodEntry & /*entry*/,
+                            KeyEvent &keyEvent) {
     if (keyEvent.isRelease()) {
         return;
     }
-    auto state = keyEvent.inputContext()->propertyFor(&factory_);
+    auto *state = keyEvent.inputContext()->propertyFor(&factory_);
     state->keyEvent(keyEvent);
 }
 
-void HangulEngine::reset(const InputMethodEntry &, InputContextEvent &event) {
-    auto state = event.inputContext()->propertyFor(&factory_);
+void HangulEngine::reset(const InputMethodEntry & /*entry*/,
+                         InputContextEvent &event) {
+    auto *state = event.inputContext()->propertyFor(&factory_);
     state->reset();
 }
 
@@ -637,9 +670,9 @@ HangulState *HangulEngine::state(InputContext *ic) {
 }
 
 void HangulCandidate::select(InputContext *inputContext) const {
-    auto state = engine_->state(inputContext);
+    auto *state = engine_->state(inputContext);
     state->select(idx_);
 }
 } // namespace fcitx
 
-FCITX_ADDON_FACTORY(fcitx::HangulEngineFactory);
+FCITX_ADDON_FACTORY_V2(hangul, fcitx::HangulEngineFactory);
