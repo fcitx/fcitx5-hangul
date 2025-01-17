@@ -95,10 +95,6 @@ enum class LookupMethod : uint8_t {
 
 class HangulState;
 
-using UString = std::basic_string<char32_t>;
-
-UString ucsToUString(const ucschar *c);
-
 class HangulEngine : public InputMethodEngine {
 public:
     HangulEngine(Instance *instance);

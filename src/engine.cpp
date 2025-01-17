@@ -53,7 +53,7 @@ const KeyList &selectionKeys() {
     return selectionKeys;
 }
 
-std::string ustringToUTF8(const UString &ustr) {
+std::string ustringToUTF8(const std::u32string &ustr) {
     std::string result;
     for (auto c : ustr) {
         result += utf8::UCS4ToUTF8(c);
@@ -61,10 +61,11 @@ std::string ustringToUTF8(const UString &ustr) {
     return result;
 }
 
-UString ucsToUString(const ucschar *str) {
-    UString result;
+std::u32string ucsToUString(const ucschar *str) {
+    std::u32string result;
     while (*str) {
-        result += *str++;
+        result.push_back(*str);
+        str++;
     }
     return result;
 }
@@ -170,7 +171,7 @@ public:
         hanjaList_.reset();
 
         const auto *hic_preedit = hangul_ic_get_preedit_string(context_.get());
-        UString preedit = preedit_;
+        std::u32string preedit = preedit_;
         preedit.append(ucsToUString(hic_preedit));
         if (!preedit.empty()) {
             auto utf8 = ustringToUTF8(preedit);
@@ -601,7 +602,7 @@ private:
     InputContext *ic_;
     UniqueCPtr<HangulInputContext, &hangul_ic_delete> context_;
     UniqueCPtr<HanjaList, &hanja_list_delete> hanjaList_;
-    UString preedit_;
+    std::u32string preedit_;
     LookupMethod lastLookupMethod_;
 };
 
