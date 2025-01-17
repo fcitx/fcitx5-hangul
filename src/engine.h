@@ -7,11 +7,21 @@
 #ifndef _FCITX5_HANGUL_ENGINE_H_
 #define _FCITX5_HANGUL_ENGINE_H_
 
+#include <cstdint>
+#include <fcitx-config/configuration.h>
+#include <fcitx-config/enum.h>
 #include <fcitx-config/iniparser.h>
+#include <fcitx-config/option.h>
+#include <fcitx-config/rawconfig.h>
 #include <fcitx-utils/i18n.h>
+#include <fcitx-utils/key.h>
+#include <fcitx-utils/keysym.h>
+#include <fcitx-utils/misc.h>
 #include <fcitx/action.h>
 #include <fcitx/addonfactory.h>
+#include <fcitx/addoninstance.h>
 #include <fcitx/addonmanager.h>
+#include <fcitx/event.h>
 #include <fcitx/inputcontextproperty.h>
 #include <fcitx/inputmethodengine.h>
 #include <fcitx/instance.h>
@@ -77,11 +87,11 @@ FCITX_CONFIGURATION(
     Option<bool> wordCommit{this, "WordCommit", _("Word Commit"), false};
     Option<bool> hanjaMode{this, "HanjaMode", _("Hanja Mode"), false};);
 
-typedef enum _LookupMethod {
+enum class LookupMethod : uint8_t {
     LOOKUP_METHOD_PREFIX,
     LOOKUP_METHOD_EXACT,
     LOOKUP_METHOD_SUFFIX
-} LookupMethod;
+};
 
 class HangulState;
 
