@@ -2,7 +2,7 @@ set( fcitx_hangul_sources
     engine.cpp
     )
 
-add_library(hangul MODULE ${fcitx_hangul_sources})
+add_fcitx5_addon(hangul ${fcitx_hangul_sources})
 target_link_libraries(hangul Fcitx5::Core Fcitx5::Config ${HANGUL_TARGET})
 install(TARGETS hangul DESTINATION "${CMAKE_INSTALL_LIBDIR}/fcitx5")
 fcitx5_translate_desktop_file(hangul.conf.in hangul.conf)
