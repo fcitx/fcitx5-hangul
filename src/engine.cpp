@@ -15,7 +15,7 @@
 #include <fcitx-utils/key.h>
 #include <fcitx-utils/keysym.h>
 #include <fcitx-utils/misc.h>
-#include <fcitx-utils/standardpath.h>
+#include <fcitx-utils/standardpaths.h>
 #include <fcitx-utils/textformatflags.h>
 #include <fcitx-utils/utf8.h>
 #include <fcitx/action.h>
@@ -98,12 +98,12 @@ std::string subUTF8String(const std::string &str, int p1, int p2) {
 }
 
 HanjaTable *loadTable() {
-    const auto &sp = fcitx::StandardPath::global();
-    std::string hanjaTxt =
-        sp.locate(fcitx::StandardPath::Type::Data, "libhangul/hanja/hanja.txt");
+    const auto &sp = fcitx::StandardPaths::global();
+    auto hanjaTxt =
+        sp.locate(fcitx::StandardPathsType::Data, "libhangul/hanja/hanja.txt");
     HanjaTable *table = nullptr;
     if (!hanjaTxt.empty()) {
-        table = hanja_table_load(hanjaTxt.c_str());
+        table = hanja_table_load(hanjaTxt.string().c_str());
     }
     return table ? table : hanja_table_load(nullptr);
 }
@@ -614,10 +614,10 @@ HangulEngine::HangulEngine(Instance *instance)
         throw std::runtime_error("Failed to load hanja table.");
     }
 
-    auto file = StandardPath::global().locate(StandardPath::Type::PkgData,
-                                              "hangul/symbol.txt");
+    auto file = StandardPaths::global().locate(StandardPathsType::PkgData,
+                                               "hangul/symbol.txt");
     if (!file.empty()) {
-        symbolTable_.reset(hanja_table_load(file.data()));
+        symbolTable_.reset(hanja_table_load(file.string().c_str()));
     }
 
     reloadConfig();
