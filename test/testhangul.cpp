@@ -57,7 +57,7 @@ void scheduleEvent(Instance *instance) {
 }
 
 int main() {
-    setupTestingEnvironment(TESTING_BINARY_DIR, {TESTING_BINARY_DIR "/src"},
+    setupTestingEnvironmentPath(TESTING_BINARY_DIR, {"bin"},
                             {TESTING_BINARY_DIR "/test"});
     char arg0[] = "testhangul";
     char arg1[] = "--disable=all";
