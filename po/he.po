@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: fcitx5-hangul\n"
 "Report-Msgid-Bugs-To: fcitx-dev@googlegroups.com\n"
-"POT-Creation-Date: 2024-03-06 20:24+0000\n"
+"POT-Creation-Date: 2025-06-15 20:25+0000\n"
 "PO-Revision-Date: 2017-12-29 05:05+0000\n"
 "Last-Translator: 63f334ffc0709ba0fc2361b80bf3c0f0_00ffd1e "
 "<ab96c93ca0ac55ba7fa06385427e60dd_878890>, 2020\n"
@@ -21,27 +21,36 @@ msgstr ""
 "Plural-Forms: nplurals=3; plural=(n == 1 && n % 1 == 0) ? 0 : (n == 2 && n % "
 "1 == 0) ? 1: 2;\n"
 
-#: src/engine.h:40
+#: src/engine.h:50
 msgid "Ahnmatae"
 msgstr ""
 
-#: src/engine.h:76
+#. This is default true, due to it has always been.
+#: src/engine.h:87
 msgid "Auto Reorder"
 msgstr ""
 
-#: src/engine.h:35
+#: src/engine.h:92
+msgid "Combine Non Choseong"
+msgstr ""
+
+#: src/engine.h:90
+msgid "Combine on Double Stroke"
+msgstr ""
+
+#: src/engine.h:45
 msgid "Dubeolsik"
 msgstr ""
 
-#: src/engine.h:36
+#: src/engine.h:46
 msgid "Dubeolsik Yetgeul"
 msgstr ""
 
-#: src/hangul.conf.in:3 src/hangul-addon.conf.in.in:3
+#: src/hangul.conf.in:2 src/hangul-addon.conf.in.in:2
 msgid "Hangul"
 msgstr "הנגול"
 
-#: src/hangul-addon.conf.in.in:4
+#: src/hangul-addon.conf.in.in:3
 msgid "Hangul Wrapper For Fcitx"
 msgstr ""
 
@@ -53,66 +62,66 @@ msgstr ""
 msgid "Hangul for Fcitx 5"
 msgstr ""
 
-#: src/engine.h:78
+#: src/engine.h:94
 msgid "Hanja Mode"
 msgstr "מצב הנג׳ה"
 
-#: src/engine.h:49
+#: src/engine.h:59
 msgid "Hanja Mode Toggle Key"
 msgstr ""
 
-#: src/engine.h:45
+#: src/engine.h:55
 msgid "Keyboard Layout"
 msgstr "פריסת מקלדת"
 
-#: src/engine.h:73
+#: src/engine.h:83
 msgid "Next Candidate"
 msgstr ""
 
-#: src/engine.h:61
+#: src/engine.h:71
 msgid "Next Page"
 msgstr "העמוד הבא"
 
-#: src/engine.h:67
+#: src/engine.h:77
 msgid "Prev Candidate"
 msgstr ""
 
-#: src/engine.h:55
+#: src/engine.h:65
 msgid "Prev Page"
 msgstr "העמוד הקודם"
 
-#: src/engine.h:39
+#: src/engine.h:49
 msgid "Romaja"
 msgstr ""
 
-#: src/engine.h:36
+#: src/engine.h:46
 msgid "Sebeolsik 390"
 msgstr ""
 
-#: src/engine.h:39
+#: src/engine.h:49
 msgid "Sebeolsik Dubeol Layout"
 msgstr ""
 
-#: src/engine.h:37
+#: src/engine.h:47
 msgid "Sebeolsik Final"
 msgstr ""
 
-#: src/engine.h:37
+#: src/engine.h:47
 msgid "Sebeolsik Noshift"
 msgstr ""
 
-#: src/engine.h:38
+#: src/engine.h:48
 msgid "Sebeolsik Yetgeul"
 msgstr ""
 
-#: src/engine.h:119
+#: src/engine.h:133
 msgid "Use Hangul"
 msgstr "שימוש בהנגול"
 
-#: src/engine.h:118
+#: src/engine.h:132
 msgid "Use Hanja"
 msgstr "שימוש בהנג׳ה"
 
-#: src/engine.h:77
+#: src/engine.h:93
 msgid "Word Commit"
 msgstr ""

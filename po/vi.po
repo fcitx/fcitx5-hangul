@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: fcitx5-hangul\n"
 "Report-Msgid-Bugs-To: fcitx-dev@googlegroups.com\n"
-"POT-Creation-Date: 2025-04-22 20:24+0000\n"
+"POT-Creation-Date: 2025-06-15 20:25+0000\n"
 "PO-Revision-Date: 2017-12-29 05:05+0000\n"
 "Last-Translator: hoanghuy309 <hoanghuy309@gmail.com>, 2025\n"
 "Language-Team: Vietnamese (https://app.transifex.com/fcitx/teams/12005/vi/)\n"
@@ -23,8 +23,17 @@ msgstr ""
 msgid "Ahnmatae"
 msgstr ""
 
-#: src/engine.h:86
+#. This is default true, due to it has always been.
+#: src/engine.h:87
 msgid "Auto Reorder"
+msgstr ""
+
+#: src/engine.h:92
+msgid "Combine Non Choseong"
+msgstr ""
+
+#: src/engine.h:90
+msgid "Combine on Double Stroke"
 msgstr ""
 
 #: src/engine.h:45
@@ -51,7 +60,7 @@ msgstr ""
 msgid "Hangul for Fcitx 5"
 msgstr ""
 
-#: src/engine.h:88
+#: src/engine.h:94
 msgid "Hanja Mode"
 msgstr ""
 
@@ -103,14 +112,14 @@ msgstr ""
 msgid "Sebeolsik Yetgeul"
 msgstr ""
 
-#: src/engine.h:127
+#: src/engine.h:133
 msgid "Use Hangul"
 msgstr ""
 
-#: src/engine.h:126
+#: src/engine.h:132
 msgid "Use Hanja"
 msgstr ""
 
-#: src/engine.h:87
+#: src/engine.h:93
 msgid "Word Commit"
 msgstr ""

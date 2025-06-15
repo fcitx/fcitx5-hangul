@@ -10,108 +10,117 @@ msgid ""
 msgstr ""
 "Project-Id-Version: fcitx5-hangul\n"
 "Report-Msgid-Bugs-To: fcitx-dev@googlegroups.com\n"
-"POT-Creation-Date: 2020-11-02 15:55-0800\n"
+"POT-Creation-Date: 2025-06-15 20:25+0000\n"
 "PO-Revision-Date: 2017-12-29 05:05+0000\n"
 "Last-Translator: mar well <m.wellendorf@gmx.de>, 2018\n"
-"Language-Team: German (https://www.transifex.com/fcitx/teams/12005/de/)\n"
+"Language-Team: German (https://app.transifex.com/fcitx/teams/12005/de/)\n"
 "Language: de\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: src/engine.h:40
+#: src/engine.h:50
 msgid "Ahnmatae"
 msgstr "Ahnmatae"
 
-#: src/engine.h:76
+#. This is default true, due to it has always been.
+#: src/engine.h:87
 msgid "Auto Reorder"
 msgstr "Automatisch neu sortieren"
 
-#: src/engine.h:35
+#: src/engine.h:92
+msgid "Combine Non Choseong"
+msgstr ""
+
+#: src/engine.h:90
+msgid "Combine on Double Stroke"
+msgstr ""
+
+#: src/engine.h:45
 msgid "Dubeolsik"
 msgstr "Dubeolsik"
 
-#: src/engine.h:36
+#: src/engine.h:46
 msgid "Dubeolsik Yetgeul"
 msgstr "Dubeolsik Yetgeul"
 
-#: src/hangul.conf.in:3 src/hangul-addon.conf.in:3
+#: src/hangul.conf.in:2 src/hangul-addon.conf.in.in:2
 msgid "Hangul"
 msgstr "Hangul"
 
-#: src/hangul-addon.conf.in:4
+#: src/hangul-addon.conf.in.in:3
 msgid "Hangul Wrapper For Fcitx"
 msgstr "Hangul Wrapper für Fcitx"
 
-#: org.fcitx.fcitx5-hangul.metainfo.xml.in:8
+#: org.fcitx.Fcitx5.Addon.Hangul.metainfo.xml.in:8
 msgid "Hangul engine for Fcitx 5"
 msgstr ""
 
-#: org.fcitx.fcitx5-hangul.metainfo.xml.in:7
+#: org.fcitx.Fcitx5.Addon.Hangul.metainfo.xml.in:7
 msgid "Hangul for Fcitx 5"
 msgstr ""
 
-#: src/engine.h:78
+#: src/engine.h:94
 msgid "Hanja Mode"
 msgstr "Hanja Modus"
 
-#: src/engine.h:49
+#: src/engine.h:59
 msgid "Hanja Mode Toggle Key"
 msgstr "Hanja Modus Umschalttaste"
 
-#: src/engine.h:45
+#: src/engine.h:55
 msgid "Keyboard Layout"
 msgstr "Tastaturlayout"
 
-#: src/engine.h:73
+#: src/engine.h:83
 msgid "Next Candidate"
 msgstr "Nächster Kandidat"
 
-#: src/engine.h:61
+#: src/engine.h:71
 msgid "Next Page"
 msgstr "Nächste Seite"
 
-#: src/engine.h:67
+#: src/engine.h:77
 msgid "Prev Candidate"
 msgstr "Vorheriger Kandidat"
 
-#: src/engine.h:55
+#: src/engine.h:65
 msgid "Prev Page"
 msgstr "Vorherige Seite"
 
-#: src/engine.h:39
+#: src/engine.h:49
 msgid "Romaja"
 msgstr "Romaja"
 
-#: src/engine.h:36
+#: src/engine.h:46
 msgid "Sebeolsik 390"
 msgstr "Sebeolsik 390"
 
-#: src/engine.h:39
+#: src/engine.h:49
 msgid "Sebeolsik Dubeol Layout"
 msgstr "Sebeolsik Dubeol Layout"
 
-#: src/engine.h:37
+#: src/engine.h:47
 msgid "Sebeolsik Final"
 msgstr "Sebeolsik Final"
 
-#: src/engine.h:37
+#: src/engine.h:47
 msgid "Sebeolsik Noshift"
 msgstr "Sebeolsik Noshift"
 
-#: src/engine.h:38
+#: src/engine.h:48
 msgid "Sebeolsik Yetgeul"
 msgstr "Sebeolsik Yetgeul"
 
-#: src/engine.h:122
+#: src/engine.h:133
 msgid "Use Hangul"
 msgstr "Hangul benutzen"
 
-#: src/engine.h:121
+#: src/engine.h:132
 msgid "Use Hanja"
 msgstr "Hanja benutzen"
 
-#: src/engine.h:77
+#: src/engine.h:93
 msgid "Word Commit"
 msgstr "Wort übergeben"
