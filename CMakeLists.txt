@@ -18,7 +18,7 @@ option(ENABLE_TEST "Build Test" On)
 option(ENABLE_COVERAGE "Build the project with gcov support (Need ENABLE_TEST=On)" Off)
 
 if (NOT DEFINED HANGUL_TARGET)
-    pkg_check_modules(Hangul IMPORTED_TARGET "libhangul>=0.2.0" REQUIRED)
+    pkg_check_modules(Hangul IMPORTED_TARGET "libhangul>=0.0.12" REQUIRED)
     set(HANGUL_TARGET PkgConfig::Hangul)
 endif()
 
