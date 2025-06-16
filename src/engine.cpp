@@ -134,6 +134,7 @@ public:
     void configure() {
         context_.reset(hangul_ic_new(
             keyboardId[static_cast<int>(*engine_->config().keyboard)]));
+#if defined(FCITX_HANGUL_VERSION_0_2)
         hangul_ic_set_option(context_.get(), HANGUL_IC_OPTION_AUTO_REORDER,
                              *engine_->config().autoReorder);
         hangul_ic_set_option(context_.get(),
@@ -142,7 +143,40 @@ public:
         hangul_ic_set_option(context_.get(),
                              HANGUL_IC_OPTION_NON_CHOSEONG_COMBI,
                              *engine_->config().nonChoseongCombi);
+#else
+        hangul_ic_connect_callback(
+            context_.get(), "transition",
+            reinterpret_cast<void *>(&HangulState::onTransitionCallback), this);
+#endif
     }
+
+#if !defined(FCITX_HANGUL_VERSION_0_2)
+
+    static bool onTransitionCallback(HangulInputContext * /*unused*/, ucschar c,
+                                     const ucschar * /*unused*/, void *data) {
+        auto *that = static_cast<HangulState *>(data);
+        return that->onTransition(c);
+    }
+
+    bool onTransition(ucschar c) {
+        if (!*engine_->config().autoReorder) {
+            if (hangul_is_choseong(c)) {
+                if (hangul_ic_has_jungseong(context_.get()) ||
+                    hangul_ic_has_jongseong(context_.get())) {
+                    return false;
+                }
+            }
+
+            if (hangul_is_jungseong(c)) {
+                if (hangul_ic_has_jongseong(context_.get())) {
+                    return false;
+                }
+            }
+        }
+
+        return true;
+    }
+#endif
 
     void updateLookupTable(bool checkSurrounding) {
         std::string hanjaKey;

@@ -85,11 +85,14 @@ FCITX_CONFIGURATION(
         KeyListConstrain(KeyConstrainFlag::AllowModifierLess)};
     // This is default true, due to it has always been.
     Option<bool> autoReorder{this, "AutoReorder", _("Auto Reorder"), true};
+
+#if defined(FCITX_HANGUL_VERSION_0_2)
     // This following two option default value sync with libhangul.
     Option<bool> combiOnDoubleStroke{this, "CombiOnDoubleStroke",
                                      _("Combine on Double Stroke"), false};
     Option<bool> nonChoseongCombi{this, "NonChoseongCombi",
                                   _("Combine Non Choseong"), true};
+#endif
     Option<bool> wordCommit{this, "WordCommit", _("Word Commit"), false};
     Option<bool> hanjaMode{this, "HanjaMode", _("Hanja Mode"), false};);
 
