@@ -4,15 +4,15 @@
 #
 # Translators:
 # csslayer <wengxt@gmail.com>, 2017
-# Dmitry <dmitrydmitry761@gmail.com>, 2024
+# Dmitry <dmitrydmitry761@gmail.com>, 2025
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: fcitx5-hangul\n"
 "Report-Msgid-Bugs-To: fcitx-dev@googlegroups.com\n"
-"POT-Creation-Date: 2025-06-15 20:25+0000\n"
+"POT-Creation-Date: 2025-06-16 20:24+0000\n"
 "PO-Revision-Date: 2017-12-29 05:05+0000\n"
-"Last-Translator: Dmitry <dmitrydmitry761@gmail.com>, 2024\n"
+"Last-Translator: Dmitry <dmitrydmitry761@gmail.com>, 2025\n"
 "Language-Team: Russian (https://app.transifex.com/fcitx/teams/12005/ru/)\n"
 "Language: ru\n"
 "MIME-Version: 1.0\n"
@@ -31,13 +31,13 @@ msgstr "Ahnmatae"
 msgid "Auto Reorder"
 msgstr "Автоматическая пересортировка"
 
-#: src/engine.h:92
+#: src/engine.h:94
 msgid "Combine Non Choseong"
-msgstr ""
+msgstr "Объединение неначальных согласных"
 
-#: src/engine.h:90
+#: src/engine.h:92
 msgid "Combine on Double Stroke"
-msgstr ""
+msgstr "Объединение двойных согласных"
 
 #: src/engine.h:45
 msgid "Dubeolsik"
@@ -63,7 +63,7 @@ msgstr "Движок Хангыль для Fcitx 5"
 msgid "Hangul for Fcitx 5"
 msgstr "Хангыль для Fcitx 5"
 
-#: src/engine.h:94
+#: src/engine.h:97
 msgid "Hanja Mode"
 msgstr "Режим Ханча"
 
@@ -115,14 +115,14 @@ msgstr "Sebeolsik Noshift"
 msgid "Sebeolsik Yetgeul"
 msgstr "Sebeolsik Yetgeul"
 
-#: src/engine.h:133
+#: src/engine.h:136
 msgid "Use Hangul"
 msgstr "Использовать Хангыль"
 
-#: src/engine.h:132
+#: src/engine.h:135
 msgid "Use Hanja"
 msgstr "Использовать Ханча"
 
-#: src/engine.h:93
+#: src/engine.h:96
 msgid "Word Commit"
 msgstr "Добавить слово"

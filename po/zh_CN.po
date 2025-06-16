@@ -3,15 +3,15 @@
 # This file is distributed under the same license as the fcitx5-hangul package.
 #
 # Translators:
-# csslayer <wengxt@gmail.com>, 2020
+# csslayer <wengxt@gmail.com>, 2025
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: fcitx5-hangul\n"
 "Report-Msgid-Bugs-To: fcitx-dev@googlegroups.com\n"
-"POT-Creation-Date: 2025-06-15 20:25+0000\n"
+"POT-Creation-Date: 2025-06-16 20:24+0000\n"
 "PO-Revision-Date: 2017-12-29 05:05+0000\n"
-"Last-Translator: csslayer <wengxt@gmail.com>, 2020\n"
+"Last-Translator: csslayer <wengxt@gmail.com>, 2025\n"
 "Language-Team: Chinese (China) (https://app.transifex.com/fcitx/teams/12005/"
 "zh_CN/)\n"
 "Language: zh_CN\n"
@@ -29,13 +29,13 @@ msgstr "安马太键盘"
 msgid "Auto Reorder"
 msgstr "自动排序"
 
-#: src/engine.h:92
+#: src/engine.h:94
 msgid "Combine Non Choseong"
-msgstr ""
+msgstr "组合非词首辅音"
 
-#: src/engine.h:90
+#: src/engine.h:92
 msgid "Combine on Double Stroke"
-msgstr ""
+msgstr "组合双辅音"
 
 #: src/engine.h:45
 msgid "Dubeolsik"
@@ -61,7 +61,7 @@ msgstr "Fcitx 5 的谚文引擎"
 msgid "Hangul for Fcitx 5"
 msgstr "Fcitx 5 的谚文支持"
 
-#: src/engine.h:94
+#: src/engine.h:97
 msgid "Hanja Mode"
 msgstr "汉字模式"
 
@@ -113,14 +113,14 @@ msgstr "Sebeolsik Noshift"
 msgid "Sebeolsik Yetgeul"
 msgstr "三套式古文"
 
-#: src/engine.h:133
+#: src/engine.h:136
 msgid "Use Hangul"
 msgstr "使用韩文"
 
-#: src/engine.h:132
+#: src/engine.h:135
 msgid "Use Hanja"
 msgstr "使用汉字"
 
-#: src/engine.h:93
+#: src/engine.h:96
 msgid "Word Commit"
 msgstr "单词提交"
