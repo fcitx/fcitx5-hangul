@@ -392,6 +392,17 @@ public:
                 if (preedit_len > 0) {
                     preedit_.pop_back();
                     keyUsed = true;
+                } else if (keyEvent.rawKey().states().test(
+                               KeyState::Repeat)) {
+                    // Composition is empty and this is a synthesized
+                    // auto-repeat backspace. Natural propagation works for
+                    // single presses, but on Wayland the auto-repeat handler
+                    // sends a RELEASE before deciding to forward the PRESS,
+                    // and many clients drop the resulting orphan pairs.
+                    // Explicitly forward the key so the app reliably deletes
+                    // one previously committed character per repeat.
+                    ic_->forwardKey(Key(FcitxKey_BackSpace));
+                    keyUsed = true;
                 }
             }
         } else {
